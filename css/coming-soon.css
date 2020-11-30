@@ -26,6 +26,13 @@ h6 {
   font-weight: 700;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 
 .header {
     position: fixed;
