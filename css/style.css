@@ -61,6 +61,7 @@ color: white;}
 
 
 .menu-btn {
+   position: fixed;
    background-color: rgba(0, 0, 0, 0);
    color: white;
    padding: 16px;
@@ -70,14 +71,15 @@ color: white;}
    border: none;
 }
 .dropdown-menu {
-   position: static;
+   position: fixed;
    display: inline-block;
 }
 .menu-content {
    display: none;
-   position: static;
+   position: fixed;
    background-color: rgba(0, 0, 0, 0);
    margin-left: -15px;
+   margin-top: 50px;
    min-width: 160px;
    z-index: 1;
 }
