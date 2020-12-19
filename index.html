@@ -8,14 +8,26 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <div class="dropdown">
-  <span class= "mad">Madindex™</span>
-  <div class="dropdown-content">
+
+<div class="dropdown-menu">
+<button class="menu-btn">Madindex™</button>
+<div class="menu-content">
     <p class= "button"><a href="mailto:hello@madindex.ml">Contact</a></p>
     <p class= "button"><a href="https://instagram.com/madindex/">Portfolio</a></p>
-  </div>
 </div>
+</div>
+<script>
+let dropdownBtn = document.querySelector('.menu-btn');
+let menuContent = document.querySelector('.menu-content');
+dropdownBtn.addEventListener('click',()=>{
+   if(menuContent.style.display===""){
+      menuContent.style.display="block";
+   } else {
+      menuContent.style.display="";
+   }
+})
+</script>
+    
     
 <canvas id="hero-lightpass"></canvas>
    
