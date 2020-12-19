@@ -61,7 +61,7 @@ color: white;}
 
 
 .menu-btn {
-   background-color: #ffffff00;
+   background-color: rgba(0, 0, 0, 0);
    color: white;
    padding: 16px;
    font-size: 20px;
@@ -76,7 +76,7 @@ color: white;}
 .menu-content {
    display: none;
    position: static;
-   background-color: #ffffff00;
+   background-color: rgba(0, 0, 0, 0);
    margin-left: -15px;
    min-width: 160px;
    z-index: 1;
@@ -90,8 +90,8 @@ color: white;}
    font-weight: bold;
 }
 .links:hover {
-   background-color: #ffffff00;
+   background-color: rgba(0, 0, 0, 0);
 }
 .dropdown-menu:hover .menu-btn {
-   background-color: #ffffff00;
+   background-color: rgba(0, 0, 0, 0);
 }
