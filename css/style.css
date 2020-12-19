@@ -72,6 +72,6 @@ color: white;}
   z-index: -1;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:active, dropdown:focus, .dropdown:hover .dropdown-content {
   display: block;
 }
