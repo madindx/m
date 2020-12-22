@@ -110,8 +110,8 @@ color: white;}
 
 .card {
   position: relative;
-  margin-top: -35%;
-  margin-left: -10%;
+  margin-top: -100px;
+  margin-left: -40px;
   width: 100%;
   height: 100%;
   cursor: pointer;
