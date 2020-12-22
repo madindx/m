@@ -22,8 +22,16 @@ let menuContent = document.querySelector('.menu-content');
 dropdownBtn.addEventListener('click',()=>{
    if(menuContent.style.display===""){
       menuContent.style.display="block";
+       window.setTimeout(function(){
+            menuContent.style.opacity = 1;
+            menuContent.style.transform = 'scale(1)';
+       })
    } else {
-      menuContent.style.display="";
+    menuContent.style.display="";
+    window.setTimeout(function(){
+     menuContent.style.opacity = 0;
+     menuContent.style.transform = 'scale(0)';      
+       })
    }
 })
 </script>
