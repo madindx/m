@@ -9,37 +9,34 @@
 </head>
 <body>
 
-<div class="dropdown-menu">
-<button class="menu-btn">Madindex™</button>
-<div class="menu-content">
-    <p class= "buttn"><a href="mailto:hello@madindex.ml">Contact</a></p>
-    <p class= "buttn"><a href="https://instagram.com/madindex/">Portfolio</a></p>
+<div class="scene scene--card">
+  <div class="card">
+    <div class="card__face card__face--front"><p class= "mbutt">Madindex™</p></div>
+    <div class="card__face card__face--back"><p class= "buttn">Hello@madindex.ml</p></div>
+  </div>
 </div>
-</div>
-<script>
-let dropdownBtn = document.querySelector('.menu-btn');
-let menuContent = document.querySelector('.menu-content');
-dropdownBtn.addEventListener('click',()=>{
-   if(menuContent.style.display===""){
-      menuContent.style.display="block";
-   } else {
-      menuContent.style.display="";
-   }
-})
-</script>
     
     
 <canvas id="hero-lightpass"></canvas>
-   
+    
+
+
+    
 <div class= "container">
-    <p class= "center">&copy; Copyright Madindex™ 2020</p>
+    <div class= "mail">
+    <p class= "buttn"><a href="mailto:hello@madindex.ml"><i class="fa fa-envelope"></i></a></p>
+    </div>
+    <div class= "insta">
+    <p class= "buttn"><a href="mailto:hello@madindex.ml"><i class="fa fa-instagram"></i></a></p>
+    </div>
+    <p class= "footer">&copy; Copyright Madindex™ 2020</p>
 </div>
+    
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
 
     
     <script src ="main.js"></script>
-
     
 </body>
 </html>
