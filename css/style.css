@@ -13,7 +13,6 @@ canvas {
   position: fixed;
   width: auto;
   height: auto;
-;
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
@@ -31,7 +30,7 @@ color: white;}
 .center {
     text-align: center;
     color: white;
-    font-size: 2vh;
+    font-size: 100%;
     font-family: sans-serif;
 }
 
@@ -40,7 +39,7 @@ color: white;}
     text-align: left;
     width: 100%;
     color: white;
-    font-size: 2vh;
+    font-size: 100%;
     font-family: sans-serif;
     margin-left: 6%;
     margin-top: 1%;
@@ -113,7 +112,7 @@ color: white;}
 .footer {
     text-align: center;
     color: white;
-    font-size: 2vh;
+    font-size: 100%;
     font-family: sans-serif;
     padding-bottom: 2%;
 }
