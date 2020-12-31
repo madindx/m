@@ -45,12 +45,12 @@ color: white;}
     text-align: center;
     color: #fff;
     z-index: 99;
-    padding-top: 70vh
+    padding-top: 10vh
 }
 
 #cover {
-  width: 800px;
-  height: 800px;
+  width: 80%;
+  height: 80%;
   margin: 0 auto;
 }
 
