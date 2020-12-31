@@ -63,7 +63,8 @@ color: white;}
 .c {
     position: fixed;
     width: 100%;
-    left: 75%;
+    left: 20%;
+    margin-top: 6px;
     margin-right: auto;
 }
 
@@ -81,16 +82,14 @@ color: white;}
     text-align: center;
     color: white;
     z-index: 99;
-    margin-left: 45%;
-    margin-top: -8%;
+    left: 4%;
 }
 .insta {
     position: absolute;
     text-align: center;
     color: white;
     z-index: 99;
-    margin-left: 55%;
-    margin-top: -8%;
+    left: 8%;
 }
 
 label {
@@ -100,7 +99,7 @@ label {
     transform-style: preserve-3d;
     display: block;
     width: 20%;
-    height: 25%;
+    height: 5%;
     position: fixed;
     left: 10%;
     padding-left: 5%;
@@ -133,7 +132,7 @@ label {
         width: 100%;
         background: transparent;
         text-align: center;
-        line-height: 200px;
+        line-height: 200%;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
     }
@@ -154,5 +153,3 @@ input {
     transform: rotateX(180deg);
     -webkit-transform: rotateX(180deg);
 }
-
-
