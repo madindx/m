@@ -64,7 +64,7 @@ color: white;}
     position: fixed;
     width: 100%;
     left: 20%;
-    margin-top: 6px;
+    margin-top: 5px;
     margin-right: auto;
 }
 
@@ -82,14 +82,14 @@ color: white;}
     text-align: center;
     color: white;
     z-index: 99;
-    left: 4%;
+    left: 8%;
 }
 .insta {
     position: absolute;
     text-align: center;
     color: white;
     z-index: 99;
-    left: 8%;
+    left: 16%;
 }
 
 label {
