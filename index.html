@@ -7,46 +7,62 @@
     <title>MADINDEX</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-
-
+<body> 
     
-<label>
-  <input type="checkbox"/>
-    <div class="card">
-        <div class="front">Madindex™</div>
-        <div class="back">Copyright &copy; 2020</div>
-    </div>
-</label>
+<script src="three.min.js"></script>
+<script src="OrbitControls.js"></script>
+<script src="GLTFLoader.js"></script>
     
+<script>
     
-<div class="c">
-    <p class= "mail"><a href="mailto:hello@madindex.ml"><i class="fa fa-envelope"></i> 	&nbsp;</a></p>
-    <p class= "insta"><a href="https://instagram.com/madindex/"><i class="fa fa-instagram"></i> 	&nbsp;</a></p>
-</div>
-
-
-<canvas id="hero-lightpass"></canvas>
- 
-<div id="cover">
-  <img src="1.gif">
-  <img src="2.gif">
-  <img src="3.gif">
-  <img src="4.gif">
-</div>
+scene = new THREE.Scene();
+scene.background = new THREE.Color(0xdddddd);
+camera = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,1,5000);
+camera.rotation.y = 45/180*Math.PI;
+camera.position.x = 800;
+camera.position.y = 100;
+camera.position.z = 1000;
+renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(window.innerWidth,window.innerHeight);
+document.body.appendChild(renderer.domElement);
     
+hlight = new THREE.AmbientLight (0x404040,100);
+scene.add(hlight);
+directionalLight = new THREE.DirectionalLight(0xffffff,100);
+directionalLight.position.set(0,1,0);
+directionalLight.castShadow = true;
+scene.add(directionalLight);
+light = new THREE.PointLight(0xc4c4c4,10);
+light.position.set(0,300,500);
+scene.add(light);
+light2 = new THREE.PointLight(0xc4c4c4,10);
+light2.position.set(500,100,0);
+scene.add(light2);
+light3 = new THREE.PointLight(0xc4c4c4,10);
+light3.position.set(0,100,-500);
+scene.add(light3);
+light4 = new THREE.PointLight(0xc4c4c4,10);
+light4.position.set(-500,300,500);
+scene.add(light4);
     
-   
-<div class= "container">
-    <p class= "footer">Copyright &copy; Madindex™ 2020</p>
-</div>
-
+let loader = new THREE.GLTFLoader();
+loader.load('scene.gltf', function(gltf){
+  car = gltf.scene.children[0];
+  car.scale.set(0.5,0.5,0.5);
+  scene.add(gltf.scene);
+  animate();
+});
     
-</body>
+let controls = new THREE.OrbitControls(camera);
+controls.addEventListener('change', renderer);
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
-
+function animate() {
+  renderer.render(scene,camera);
+  requestAnimationFrame(animate);
+}  
+init();
     
-<script src ="main.js"></script>
+</script>
     
+</body> 
 </html>
