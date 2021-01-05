@@ -13,6 +13,8 @@
 <script src="https://threejs.org/examples/js/loaders/GLTFLoader.js"></script>
 <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
+
 <script>
 $('body').append('<div style="" id="loadingDiv"><div class= "post"><img src= "loady.gif"></div></div></div>');
 $(window).on('load', function(){
@@ -25,6 +27,7 @@ function removeLoader(){
   });  
 }
 </script>
+
     
 <script>
 
@@ -36,7 +39,6 @@ var renderer = new THREE.WebGLRenderer({
 });
 renderer.setClearColor(0x808080);
 renderer.setPixelRatio( window.devicePixelRatio );
-;
 renderer.physicallyCorrectLights = true;
 var canvas = renderer.domElement
 document.body.appendChild(canvas);
@@ -64,17 +66,6 @@ const directionalLight = new THREE.DirectionalLight( 0xffffff, 1 );
 scene.add( directionalLight );
 directionalLight.position.set(0.5,0,2);
 
-var loader = new THREE.GLTFLoader();
-    
-loader.load( 'scene.glb', function ( gltf ) {
-  scene.add( gltf.scene );
-
-}, undefined, function ( error ) {
-
-  console.error( error );
-
-} );
-
 render();
 
 function render() {
@@ -97,5 +88,6 @@ function resize(renderer) {
   return needResize;
 }
 </script>
+<script src="madin.js"></script>
 </body> 
 </html>

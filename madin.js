@@ -1,35 +1,42 @@
-let container;
-let camera;
-let renderer;
-let scene;
+const html = document.documentElement;
+const canvas = document.getElementById("hero-lightpass");
+const context = canvas.getContext("2d");
 
-function init(){
-    container = document.querySelector('.scene');
-    
-    scene = new THREE.Scene();
-    
-    const fov = 35;
-    const aspect = container.clientWidth / container.clientHeight;
-    const near = 0.1;
-    const far = 500;
-    
-    camera = new THREE.PerspectiveCamera(fov,aspect,near,far);
-    camera.position.set(0, 0, 0);
-    
-    const ambient = new THREE.AmbientLight(0x404040, 1);
-    scene.add(ambient);
-    
-    renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    
-    container.appendChild(renderer.domElement);
-    
-    let loader = new THREE.GLTFLoader();
-    loader.load("scene.gltf", function(gltf){
-        scene.add(gltf.scene);
-        renderer.render(scene,camera);
-    });
+const frameCount = 61;
+const currentFrame = index => (
+  `seq/seq_${index.toString().padStart(5, '0')}.jpg`
+)
+
+const preloadImages = () => {
+  for (let i = 1; i < frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+  }
+};
+
+const img = new Image()
+img.src = currentFrame(1);
+canvas.width=1080;
+canvas.height=1080;
+img.onload=function(){
+  context.drawImage(img, 0, 0);
 }
 
-init();
+const updateImage = index => {
+  img.src = currentFrame(index);
+  context.drawImage(img, 0, 0);
+}
+
+window.addEventListener('scroll', () => {  
+  const scrollTop = html.scrollTop;
+  const maxScrollTop = html.scrollHeight - window.innerHeight;
+  const scrollFraction = scrollTop / maxScrollTop;
+  const frameIndex = Math.min(
+    frameCount - 1,
+    Math.ceil(scrollFraction * frameCount)
+  );
+  
+  requestAnimationFrame(() => updateImage(frameIndex + 1))
+});
+
+preloadImages()
