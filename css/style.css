@@ -10,6 +10,7 @@ canvas {
   display; block;
 }
 .post {
+    object-fit: cover;
     display: block;
     width: 50%;
     margin-top: 10%;
