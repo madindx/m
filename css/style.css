@@ -25,7 +25,7 @@ color: white;}
     position: static;
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 20%;
 }
 .loader,
 .loader:after {
