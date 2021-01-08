@@ -21,41 +21,57 @@ $(window).on('load', function(){
   setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
 });
 function removeLoader(){
+
     $( "#loadingDiv" ).fadeOut(500, function() {
+        $('html, body').css({overflow: 'hidden'});
       // fadeOut complete. Remove the loading div
+      $('html, body').css({overflow: 'visible'});
       $( "#loadingDiv" ).remove(); //makes page more lightweight 
   });  
 }
 </script>
+    
+<div class="header">
+    <p>hey</p>
+</div>
 
+<canvas style="position:fixed;border:none;max-width:10%;max-height:10%;z-index:3;padding-top:1%;padding-left:1%;", id="hero-lightpass"></canvas>
 
+<div id="div1"></div>
     
 <script>
 
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(60, 1, 1, 1000);
-camera.position.set(0, 0, 50);
+camera.position.set(0, 0, 0);
+camera.rotation.y = -20.35;
 var renderer = new THREE.WebGLRenderer({
   antialias: true
 });
 renderer.setClearColor(0x808080);
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.physicallyCorrectLights = true;
-var canvas = renderer.domElement
-document.body.appendChild(canvas);
+var canva = renderer.domElement
+document.body.appendChild(canva);
     
 sphereCamera = new THREE.CubeCamera(1,1000,50);
 sphereCamera.position.set(0,100,0);
 scene.add(sphereCamera);
 
-var controls = new THREE.OrbitControls(camera, renderer.domElement);
-controls.enableZoom = false;
+
+function updateCamera(ev) {
+    let div1 = document.getElementById("div1");
+	camera.rotation.y = -1.5 + window.scrollY / 250.0;
+}
+window.addEventListener("scroll", updateCamera);
+
     
 let urls = [
     'pxx.png', 'nxx.png',
     'pyy.png', 'nyy.png',
     'pzz.png', 'nzz.png'
 ];
+
     
 let loaded = new THREE.CubeTextureLoader();
     scene.background = loaded.load(urls);
@@ -68,21 +84,24 @@ scene.add( directionalLight );
 directionalLight.position.set(0.5,0,2);
 
 render();
+animate();
 
 function render() {
   if (resize(renderer)) {
-    camera.aspect = canvas.clientWidth / canvas.clientHeight;
+    camera.aspect = canva.clientWidth / canva.clientHeight;
     camera.updateProjectionMatrix();
   }
+  camera.rotation.x += 0.001;
   renderer.render(scene, camera);
   requestAnimationFrame(render);
 }
+    
 
 function resize(renderer) {
-  const canvas = renderer.domElement;
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
-  const needResize = canvas.width !== width || canvas.height !== height;
+  const canva = renderer.domElement;
+  const width = canva.clientWidth;
+  const height = canva.clientHeight;
+  const needResize = canva.width !== width || canva.height !== height;
   if (needResize) {
     renderer.setSize(width, height, false);
   }
@@ -90,5 +109,7 @@ function resize(renderer) {
 }
 </script>
 <script src="madin.js"></script>
+<div class="funny">
+</div>
 </body> 
 </html>
