@@ -1,5 +1,5 @@
 html, body {
-  overflow: auto;
+  overflow: hidden;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -14,16 +14,83 @@ canvas {
   margin: 0 auto;
   z-index: 1;
 }
+.center img {   
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+test:active span {display:none}
+test:active:before {content:"All Rights Reserved"}
+
+.type {
+    z-index:2;
+    color:#FFF;
+    margin-top:20%;
+    position:absolute;
+    width:100%;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    font-family:sans-serif;
+    transition: transform 1s;
+}
+.child {
+    z-index:2;
+    color:#FFF;
+    margin-top:20%;
+    position:absolute;
+    width:100%;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    font-family:sans-serif;
+    transition: transform 1s;
+}
+.child:active {
+    transform: rotateX(180deg) scale(1,-1);
+   -webkit-transform: rotateX(180deg) scale(1,-1);
+   -ms-transform: rotateX(180deg) scale(1,-1);
+}
 .header {
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     width: 100%;
     padding-top: 5%;
     background-color: black;
     border-bottom: 1px solid ghostwhite;
 }
 .funny {
-    padding-top: 200%;
+    padding-top: 100%;
+}
+.head {
+    position: fixed;
+    height: 12%;
+    width: 100%;
+    background: linear-gradient(to top, transparent 0%, black 50%);
+    z-index: 3;
+    padding-top: 5%;
+    margin-top: 0;
+}
+.foot {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(to bottom, transparent 0%, black 100%);
+    z-index: 2;
+    margin-bottom: 0;
+}
+.typo {
+    color: #FFFFFF;
+    font-size: 100%;
+    text-align: center;
+    font-family: sans-serif;
+    z-index: 10;
+    padding-top: 50%;
 }
 placer {
   object-fit: cover;
@@ -35,18 +102,6 @@ placer {
   z-index: 1;
   border: 1px solid white;
 }
-coocoo {
-  position: fixed;
-  max-width: 100%;
-  max-height: 100%;
-  left: 50%;
-  z-index: 999;
-  margin-top: 10%;
-}
-a:hover, a:visited, a:link, a:active
-{text-decoration: none;
-color: white;}
-
 .border {
   position: fixed;
   top: 0;

@@ -16,12 +16,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
 
 <script>
+  window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+</script>
+<script>
 $('body').append('<div style="" id="loadingDiv"><div class= "post"><img src= "loady.gif" width="200" height="200"></div></div></div>');
 $(window).on('load', function(){
-  setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
+  setTimeout(removeLoader, 1500); //wait for page load PLUS two seconds.
 });
 function removeLoader(){
-
     $( "#loadingDiv" ).fadeOut(500, function() {
         $('html, body').css({overflow: 'hidden'});
       // fadeOut complete. Remove the loading div
@@ -30,13 +34,42 @@ function removeLoader(){
   });  
 }
 </script>
+
+<div class="head">
+</div>
     
-<div class="header">
-    <p>hey</p>
+<div class="type">
+MADINDEX™ "WEBSITE" NOW LIVE FROM STUDIO
 </div>
 
-<canvas style="position:fixed;border:none;max-width:10%;max-height:10%;z-index:3;padding-top:1%;padding-left:1%;", id="hero-lightpass"></canvas>
+<div class="type">
+<div style="margin-top:4%;">
+ORDER@MADINDEX.ML
+</div>
+</div>
 
+<div class="type">
+<div style="margin-top:10%;padding-left:20%;padding-right:20%">
+Madindex is a Graphic Designer based in the United States expanding experimental design.
+ @Madindex Established August 2019 as SQY + rebranded 2020 as Madindex.
+ Connect on Instagram: @madindex. Contact for enquiries, commission; minimum rate 100usd.
+ All commercial and proffesional work may be aquired through license, email for details.
+</div>
+</div>
+
+Madindex is an experimental Graphic Designer based in the United States.
+ @Madindex established August 2019 as "SQY" + rebranded 2020 as "Madindex".
+ Connect on Instagram: @madindex. Contact for enquiries, commission; minimum rate 100usd.
+ All commercial and proffesional work may be aquired through license, email for details.
+    
+<div class="type">
+<div style="margin-top:20%;padding-left:20%;padding-right:20%">
+Services
+</div>
+</div>
+    
+<canvas style="background:no-repeat 0 0;border-width:0;border-radius:0;background-color:transparent;position:fixed;width:20%;height:auto;z-index:4;left:50%;top:1%;margin-left:-10%;", id="hero-lightpass"></canvas>
+    
 <div id="div1"></div>
     
 <script>
@@ -92,6 +125,7 @@ function render() {
     camera.updateProjectionMatrix();
   }
   camera.rotation.x += 0.001;
+  camera.rotation.z -= 0.001;
   renderer.render(scene, camera);
   requestAnimationFrame(render);
 }
@@ -109,7 +143,14 @@ function resize(renderer) {
 }
 </script>
 <script src="madin.js"></script>
+    
 <div class="funny">
 </div>
+<div class="foot">
+    </div>
+<div class="child">
+<test><span>Copyright &copy; 2021 Madindex</span></test>
+</div>
+    </div>
 </body> 
 </html>
