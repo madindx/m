@@ -37,23 +37,15 @@ function removeLoader(){
 
 <div class="head">
 </div>
+<div class="shadow">
+</div>
     
-<div class="type">
-<div style="padding-top:30%;">
+    
 MADINDEX™ "WEBSITE"
-</div>
-</div>
-
-<div class="type">
-<div style="margin-top:4%;">
 ORDER@MADINDEX.ML
-</div>
-</div>
 
-<div class="type">
-<div style="margin-top:10%;padding-left:20%;padding-right:20%">
-</div>
-</div>
+Madindex is one individual Designer from the United States. Established August 2019 under the label SQY + rebranded
+2020 as Madindex. Commissions are available through Instagram or Email at a minimum rate of 100.00USD.
 
 Madindex is an experimental Graphic Designer based in the United States.
  @Madindex established August 2019 as "SQY" + rebranded 2020 as "Madindex".
@@ -61,13 +53,10 @@ Madindex is an experimental Graphic Designer based in the United States.
  All commercial and proffesional work may be aquired through license, email for details.
     
 services
-<div class="type">
-<div style="margin-top:20%;padding-left:20%;padding-right:20%">
-    
-</div>
-</div>
-    
-<canvas style="background:no-repeat 0 0;border-width:0;border-radius:0;background-color:transparent;position:fixed;width:60%;height:auto;z-index:4;left:50%;top:1%;margin-left:-30%;", id="hero-lightpass"></canvas>
+
+
+<canvas style="background:no-repeat 0 0;border-width:0;border-radius:0;background-color:transparent;position:fixed;;height:auto;z-index:5;left:50%;top:1%;", id="hero-lightpass"></canvas>
+
     
 <div id="div1"></div>
     
@@ -140,16 +129,75 @@ function resize(renderer) {
   }
   return needResize;
 }
+    //<test><span>Copyright &copy; 2021 Madindex</span></test>
 </script>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 30, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d : " + hours + "h : "
+  + minutes + "m : " + seconds + "s";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+    
 <script src="madin.js"></script>
+
+<div class="divider"></div>
+
+<div style="padding-bottom:5%;" class= "wrap">
+<div class="inner">
+    <span class="txt">ORDER@MADINDEX.ML</span>
+    <span class="dodge"></span>
+  </div>
+</div>
+    
+<div class="type">
+<p style="padding-bottom:1%;padding-top:1%;border:1px solid #FFF;margin-right:20%;margin-left:20%;"><a href="mailto:order@madindex.ml">Click here to order via e-mail</a></p>
+<p style="padding-right:20%;padding-left:20%;margin-top:1%;font-size:60%;opacity:50%;">All orders must conform to minimum rate 100.00USD</p>
+</div>
+    
+<div class="divider"></div>
+Madindex is an independant designer from the United States. Established August 2019 under the label SQY + rebranded
+2020 as Madindex. Commissions are available through Instagram or email at a minimum rate of 100.00USD.
+    
+<div class="type">
+<p style="font-weight:bolder;">MADINDEX™ "WEBSITE"</p>
+<p style="padding-bottom:1%;padding-top:1%;border:1px solid #FFF;margin-right:20%;margin-left:20%;">NEXT RELEASE:</p>
+<p style="padding-bottom:1%;padding-top:1%;margin-top:-5px;font-size:150%;border:1px solid #FFF;color:transparent;margin-right:20%;margin-left:20%;-webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #FFF;" id="demo"></p>
+<p style="padding-right:20%;padding-left:20%;margin-top:-1%;font-size:60%;opacity:50%;">Instagram exclusive drop only available after countdown. Follow @madindex or visit http://instagram.com/madindex/ to see more. Dates shown are estimates only and may be changed at any time without further notice.</p>
+</div>
     
 <div class="funny">
 </div>
-<div class="foot">
-    </div>
-<div class="child">
-<test><span>Copyright &copy; 2021 Madindex</span></test>
+
+
+<div class="ftype">
+<p>Copyright &copy; 2021 Madindex</p>
 </div>
-    </div>
+    
 </body> 
 </html>
