@@ -168,13 +168,13 @@ test:active:before {content:"All Rights Reserved"}
 .loader:after {
     border-radius: 50%;
     width: 100%;
-    height: 100%;
+    height: 1000%;
     z-index: 999;
 }
 #loadingDiv {
     position:absolute;
     width:100%;
-    height:100%;
+    height:1000%;
     background-color:#FFF;
     z-index: 999;
 }
