@@ -20,13 +20,122 @@ canvas {
   margin-left:auto;
   margin-right:auto;
 }
+hh {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: transparent;
+    font-family: optima;
+}
+hh:before {
+    content: attr(data-text);
+    position: absolute;
+    border-right: 1px solid #FFF;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #FFF;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: type 4s steps(30) infinite;
+}
+@keyframes type {
+    0% {
+        width: 0;
+    }
+    50% {
+        margin-top: 0%;
+        width: 100%;
+    }
+    51% {
+        margin-top: -15px;
+    }
+    100% {
+        margin-top: -15px;
+        width: 100%;
+        border-right: transparent;
+    }
+}
+vv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: transparent;
+    font-family: optima;
+}
+vv:before {
+    content: attr(data-text);
+    position: absolute;
+    border-right: 1px solid #FFF;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #FFF;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typo 4s steps(30) infinite;
+    animation-delay: 2s;
+}
+@keyframes typo {
+    0% {
+        width: 0;
+    }
+    50% {
+        margin-top: 0%;
+        width: 100%;
+    }
+    51% {
+        margin-top: -15px;
+    }
+    100% {
+        margin-top: -15px;
+        width: 100%;
+        border-right: transparent;
+    }
+}
+xx {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: transparent;
+    font-family: monospace;
+    z-index: 1000;
+}
+xx:before {
+    content: attr(data-text);
+    position: absolute;
+    border-right: 1px solid #000;
+    font-display:
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typa 1s steps(4) infinite;
+    z-index: 1000;
+}
+@keyframes typa {
+    0% {
+        width: 70%;
+    }
+    60% {
+        width: 100%;
+    }
+}
 
 a:hover, a:visited, a:link, a:active
 {text-decoration: none;
 color: white;}
-
-test:active span {display:none}
-test:active:before {content:"All Rights Reserved"}
 
 .divider {
     width: 100%;
@@ -38,7 +147,7 @@ test:active:before {content:"All Rights Reserved"}
 }
 .ftype {
     z-index:2;
-    color:#FFF;
+    color:transparent;
     position:absolute;
     width:100%;
     height: 10%;
@@ -47,7 +156,10 @@ test:active:before {content:"All Rights Reserved"}
     margin-left:auto;
     margin-right:auto;
     text-align:center;
-    font-family:sans-serif;
+    font-family: arial-black;
+    transform: scale(2,1);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #FFF;
     padding-bottom: 5px;
 }
 .wrap {
@@ -62,12 +174,13 @@ test:active:before {content:"All Rights Reserved"}
 }
 .txt {
     z-index:2;
-    font-family:sans-serif;
+    font-family: optima;
     color: white;
     font-size: 200%;
     filter: contrast(2);
 }
 .txt::before {
+    font-family: optima;
     content: 'ORDER@MADINDEX.ML';
     position: absolute;
     mix-blend-mode: difference;
@@ -173,6 +286,7 @@ test:active:before {content:"All Rights Reserved"}
 }
 #loadingDiv {
     position:absolute;
+    text-align: center;
     width:100%;
     height:1000%;
     background-color:#FFF;
