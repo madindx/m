@@ -213,6 +213,11 @@ color: white;}
     mix-blend-mode: difference;
     filter: blur(.5px);
 }
+@media only screen and (max-width: 800px) {
+    .txt::before {
+        filter: blur(.2px);
+    }
+}
 .dodge {
     z-index: 4;
     background: radial-gradient(circle, #FFF, black 35%) center / 50% 50%;
@@ -262,7 +267,7 @@ color: white;}
    -ms-transform: rotateX(180deg) scale(1,-1);
 }
 .funny {
-    padding-top: 150%;
+    padding-top: 50%;
 }
 
 .head {
