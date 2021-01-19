@@ -39,13 +39,15 @@ function removeLoader(){
         <div style="top:0;height:100%;">
             <p style="width:100%;font-size:400%;font-family:optima;">Madindex™</p>
         </div>
-<div style="padding-top: 10em;">
-<hh data-text="Madindex™ copyright 2021">Madindex™ copyright 2021</hh>
-<vv data-text="contact@madindex.ml">contact@madindex.ml</vv>
-</div>
 </div>
      </section>
     </div>
+
+
+<div class="divider"></div>
+    
+<hh data-text="Madindex™ copyright 2021">Madindex™ copyright 2021</hh>
+<vv data-text="contact@madindex.ml">contact@madindex.ml</vv>
 
    
     
@@ -66,7 +68,23 @@ function removeLoader(){
 </script>
     
 
-
+<script>
+$(document).ready(function () {
+  $(".parallax").each(function () {
+    var $this = $(this);
+		$this.data("top", $this.offset().top);
+		$this.data("rate", $this.attr("data-parallax-rate"));
+	});
+	$(window).scroll(function () {
+		$(".parallax").each(function () {
+			var scrollTop = $(window).scrollTop();
+			var rate = $(this).data("rate");
+			var thisTop  = scrollTop - scrollTop * rate
+			$(this).css("top", $(this).data("top") + thisTop);
+		});
+	});
+});    
+</script>
 
 <div id="col1" class="parallax" data-parallax-rate="1.5">
     
@@ -110,10 +128,11 @@ var x = setInterval(function() {
     
 <script src="madin.js"></script>
 
-    
-<div class="divider"></div>
 
-<div style="padding-bottom:5%;" class= "wrap">
+
+
+   
+<div class= "wrap">
 <div class="inner">
     <span class="txt">ORDER@MADINDEX.ML</span>
     <span class="dodge"></span>
@@ -121,43 +140,21 @@ var x = setInterval(function() {
 </div>
 
     
-<div class="divider"></div>
+<div class="sdivider"></div>
 
-
-
-    
-<script>
-$(document).ready(function () {
-  $(".parallax").each(function () {
-    var $this = $(this);
-		$this.data("top", $this.offset().top);
-		$this.data("rate", $this.attr("data-parallax-rate"));
-	});
-	$(window).scroll(function () {
-		$(".parallax").each(function () {
-			var scrollTop = $(window).scrollTop();
-			var rate = $(this).data("rate");
-			var thisTop  = scrollTop - scrollTop * rate
-			$(this).css("top", $(this).data("top") + thisTop);
-		});
-	});
-});    
-</script>
-
-    
 
     
 
     
 <div class="type">
-<p style="padding-bottom:1%;padding-top:1%;border:1px solid #FFF;margin-right:20%;margin-left:20%;"><a href="mailto:order@madindex.ml">Click here to order via e-mail</a></p>
+<p style="padding-bottom:1%;padding-top:1%;border:1px solid #FFF;margin-right:20%;margin-left:20%;"><a href="mailto:order@madindex.ml">Order via e-mail</a></p>
 <p style="padding-right:20%;padding-left:20%;margin-top:1%;font-size:60%;opacity:50%;">All orders must conform to minimum rate 100.00USD. Availability Limited.</p>
 </div>
     
 <div class="divider"></div>
     
 <div class="type">
-<p style="font-weight:bolder;">MADINDEX™ "WEBSITE"</p>
+<p style="font-weight:bolder;">MADINDEX™ Website Copyright 2021</p>
 <p style="padding-bottom:1%;padding-top:1%;border:1px solid #FFF;margin-right:20%;margin-left:20%;">NEXT RELEASE:</p>
 <p style="padding-bottom:1%;padding-top:1%;margin-top:-5px;font-size:150%;border:1px solid #FFF;color:transparent;margin-right:20%;margin-left:20%;-webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #FFF;" id="demo"></p>
@@ -171,6 +168,6 @@ $(document).ready(function () {
 <div class="ftype">
 <p>Copyright &copy; 2021 Madindex</p>
 </div>
-    
+   
 </body> 
 </html>
