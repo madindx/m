@@ -23,7 +23,7 @@ canvas {
 #col1 {
     position: fixed;
     color: #fff;
-    width: 100%;
+    max-width: 100%;
     left: 50%;
 }
 
