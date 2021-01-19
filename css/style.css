@@ -57,7 +57,7 @@ hh:before {
     color: #FFF;
     overflow: hidden;
     white-space: nowrap;
-    animation: type 4s steps(30) infinite;
+    animation: type 4s steps(25) infinite;
 }
 @keyframes type {
     0% {
@@ -96,7 +96,7 @@ vv:before {
     color: #FFF;
     overflow: hidden;
     white-space: nowrap;
-    animation: typo 4s steps(30) infinite;
+    animation: typo 4s steps(25) infinite;
     animation-delay: 2s;
 }
 @keyframes typo {
@@ -130,7 +130,6 @@ xx:before {
     content: attr(data-text);
     position: absolute;
     border-right: 1px solid #000;
-    font-display:
     top: 0;
     left: 0;
     width: 100%;
@@ -138,12 +137,12 @@ xx:before {
     color: #000;
     overflow: hidden;
     white-space: nowrap;
-    animation: typa 1s steps(4) infinite;
+    animation: typa .9s steps(4) infinite;
     z-index: 1000;
 }
 @keyframes typa {
     0% {
-        width: 70%;
+        width: 81%;
     }
     60% {
         width: 100%;
