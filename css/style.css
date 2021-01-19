@@ -39,12 +39,13 @@ section {
 }
 hh {
     position: absolute;
-    top: 20%;
+    top: 15em;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
     color: transparent;
     font-family: monospace;
+    z-index: 3;
 }
 hh:before {
     content: attr(data-text);
@@ -79,12 +80,13 @@ hh:before {
 }
 vv {
     position: absolute;
-    top: 20%;
+    top: 15em;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
     color: transparent;
     font-family: monospace;
+    z-index: 3;
 }
 vv:before {
     content: attr(data-text);
