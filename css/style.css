@@ -58,6 +58,7 @@ canvas {
     margin-left:20%;
     margin-bottom:2%;
     transition: all 0.3s ease-out;
+    z-index: 5;
 }
 .ho:hover {
     background: #06D85F;
@@ -304,13 +305,13 @@ color: white;}
     position: absolute;
     display: inline-flex;
     overflow: hidden;
-    background-color: black;
+    z-index: -1;
 }
 .txt {
-    z-index:2;
+    z-index: -1;
     font-family: optima;
     color: white;
-    font-size: 200%;
+    font-size: 100%;
     filter: contrast(2);
 }
 .txt::before {
