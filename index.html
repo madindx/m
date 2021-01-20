@@ -24,6 +24,7 @@ $(window).on('load', function(){
 });
 function removeLoader(){
     $( "#loadingDiv" ).fadeOut(500, function() {
+    
         $('html, body').css({overflow: 'hidden'});
       // fadeOut complete. Remove the loading div
       $('html, body').css({overflow: 'visible'});
@@ -87,9 +88,9 @@ $(document).ready(function () {
 });    
 </script>
 
-<div id="col1" class="parallax" data-parallax-rate="1.5">
+<div style="z-index:-1;" id="col1" class="parallax" data-parallax-rate="1.5">
     
-<canvas id="hero-lightpass"></canvas>
+<canvas style="z-index:0;" id="hero-lightpass"></canvas>
     
 </div>
 
@@ -116,8 +117,8 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d : " + hours + "h : "
-  + minutes + "m : " + seconds + "s";
+  document.getElementById("demo").innerHTML = days + ":" + hours + ":"
+  + minutes + ":" + seconds + "s";
     
   // If the count down is over, write some text 
   if (distance < 0) {
@@ -130,45 +131,65 @@ var x = setInterval(function() {
 <script src="madin.js"></script>
 
 
-
-
-   
+<div style="background-color:black;border-radius:.2em;padding-bottom:3%;padding-top:3%;border:1px solid #FFF;margin-right:20%;margin-left:20%;">
+<a href="mailto:order@madindex.ml">
 <div class= "wrap">
 <div class="inner">
     <span class="txt">ORDER@MADINDEX.ML</span>
     <span class="dodge"></span>
   </div>
 </div>
-
+    </a>
+</div>
     
 <div class="sdivider"></div>
 
-
-    
-
-    
-<div class="type">
-<p style="padding-bottom:1%;padding-top:1%;border:1px solid #FFF;margin-right:20%;margin-left:20%;"><a href="mailto:order@madindex.ml">Order via e-mail</a></p>
-<p style="padding-right:20%;padding-left:20%;margin-top:1%;font-size:60%;opacity:50%;">All orders must conform to minimum rate 100.00USD. Availability Limited.</p>
+<div class="ho">
+    <a style="padding-right:20%;padding-left:20%;" href="mailto:order@madindex.ml">Order via E-mail</a>
 </div>
     
-<div class="divider"></div>
+<div class="type">
+    
+<p style="padding-right:20%;padding-left:20%;margin-top:-1%;font-size:60%;opacity:50%;">All orders must conform to minimum rate 100.00USD. Availability Limited.</p>
+</div>
+    
+<div class="hdivider"></div>
     
 <div class="type">
-<p style="font-weight:bolder;">@madindex</p>
-<p style="padding-bottom:1%;padding-top:1%;border:1px solid #FFF;margin-right:20%;margin-left:20%;">NEXT RELEASE:</p>
-<p style="padding-bottom:1%;padding-top:1%;margin-top:-5px;font-size:150%;border:1px solid #FFF;color:transparent;margin-right:20%;margin-left:20%;-webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #FFF;" id="demo"></p>
-<p style="padding-right:20%;padding-left:20%;margin-top:-1%;font-size:60%;opacity:50%;">Instagram exclusive drop only available after countdown. Follow @madindex or visit http://instagram.com/madindex/ to see more. Dates shown are estimates only and may be changed at any time without further notice.</p>
+<p style="font-weight:bolder; font-size: 150%;">@MADINDEX NEXT RELEASE:</p>
+<p style="background-color:black;border-radius:.2em;padding-bottom:2%;padding-top:2%;margin-top:-5px;font-size:400%;border:1px solid #FFF;color:transparent;margin-right:20%;margin-left:20%; color:#fff;font-family:pixel;" id="demo"></p>
+<p style="padding-right:20%;padding-left:20%;margin-top:-4%;font-size:60%;opacity:50%;">Instagram exclusive drop only available after countdown. Follow @madindex or visit http://instagram.com/madindex/ to see more. Release date estimate may be subject to change.</p>
 </div>
 
 
 <div class="divider"></div>
 <div class="divider"></div>
     
-<a style="display:block;color:#fff;text-align:center;font-family:optima;padding-bottom:1%;padding-top:1%;border:1px solid #FFF;margin-right:20%;margin-left:20%;margin-bottom:2%;" href="mailto:contact@madindex.ml">Contact</a>
+<div class="ho">
+    <a style="padding-right:20%;padding-left:20%;" href="mailto:contact@madindex.ml">Contact</a>
+</div>
     
-<a style="display:block;color:#fff;text-align:center;font-family:optima;padding-bottom:1%;padding-top:1%;border:1px solid #FFF;margin-right:20%;margin-left:20%;" href="http://instagram.com/madindex/">Instagram</a>
+<div class="ho">
+    <a style="padding-right:20%;padding-left:20%;" href="http://instagram.com/madindex/">Instagram</a>
+</div>
+    
+    
+<div class="box">
+	<a class="button" href="#popup1">Services</a>
+</div>
+
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<p style="font-family:optima;font-weight:bolder;">Services</p>
+		<a class="close" href="#">&times;</a>
+		<div class="conta" style="font-family:optima">
+			<p>Graphic design, Custom graphics</p>
+            <p>Website design, Front end development</p>
+            <p>Video production, VFX and animation</p>
+
+		</div>
+	</div>
+</div>
 
     
 
