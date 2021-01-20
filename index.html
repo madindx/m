@@ -18,7 +18,7 @@
 }
 </script>
 <script>
-$('body').append('<div style="" id="loadingDiv"><xx data-text="Loading...">Loading...</xx></div>');
+$('body').append('<div style="" id="loadingDiv"><xx style="z-index:99999" data-text="Loading...">Loading...</xx></div>');
 $(window).on('load', function(){
   setTimeout(removeLoader, 1500); //wait for page load PLUS two seconds.
 });
