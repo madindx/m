@@ -290,7 +290,7 @@ color: white;}
     justify-content: center;
 }
 .inner {
-    top: 50%;
+    top: 40%;
     position: absolute;
     display: inline-flex;
     overflow: hidden;
