@@ -13,6 +13,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
 
 <script>
+    
   window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
@@ -32,7 +33,52 @@ function removeLoader(){
 }
 </script>
     
-   
+
+<style>
+#test p {
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+    animation: fadein 4s;
+    -moz-animation: fadein 4s; /* Firefox */
+    -webkit-animation: fadein 4s; /* Safari and Chrome */
+    -o-animation: fadein 4s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        color:#000;
+    }
+    to {
+        color:#fff;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        color:#000;
+    }
+    to {
+        color:#fff;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        color:#000;
+    }
+    to {
+        color:#fff;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        color:#000;
+    }
+    to {
+        color:#fff;
+    }
+}
+</style>
+    
+<div id="test">
 <div class="content">
     <section class="distort">
         <div>
@@ -42,6 +88,7 @@ function removeLoader(){
 </div>
      </section>
     </div>
+</div>
 
 
 <div class="divider"></div>
@@ -125,15 +172,15 @@ var x = setInterval(function() {
 </script>
     
 <script src="madin.js"></script>
-  
-<p style="background-color:black;border-radius:.2em;padding-bottom:2%;padding-top:2%;margin-top:-5px;font-size:150%;border:1px solid #FFF;color:transparent;margin-right:20%;margin-left:20%;color:#fff;font-family:pixel;text-align:center;" id="demo"></p>
     
 <div class="type">
 <p style="font-weight:bolder; font-size: 150%;">@MADINDEX NEXT RELEASE:</p>
+</div>
+
+<p style="background-color:black;border-radius:.2em;padding-bottom:2%;padding-top:2%;margin-top:8%;font-size:3em;border:1px solid #FFF;color:transparent;margin-right:20%;margin-left:20%;color:#fff;font-family:pixel;text-align:center;letter-spacing:-.2em;" id="demo"></p>
     
-<p style="background-color:black;border-radius:.2em;padding-bottom:2%;padding-top:2%;margin-top:-5px;font-size:3em;border:1px solid #FFF;color:transparent;margin-right:20%;margin-left:20%;color:#fff;font-family:pixel;text-align:center;letter-spacing: -.2em;" id="demo"></p>
-    
-<p style="padding-right:20%;padding-left:20%;margin-top:-1%;font-size:60%;opacity:50%;">Instagram exclusive drop only available after countdown. Follow @madindex or visit http://instagram.com/madindex/ to see more. Release date estimate may be subject to change.</p>
+<div class="type">   
+<p style="padding-right:20%;padding-left:20%;margin-top:-4%;font-size:60%;opacity:50%;">New exclusive drop only available on Instagram. Follow @madindex or visit http://instagram.com/madindex/ to see more.</p>
 </div>
 
 
@@ -149,8 +196,7 @@ var x = setInterval(function() {
     </a>
 </div>
     
-<div class="divider"></div>
-<div class="divider"></div>
+<div class="hdivider"></div>
 
 <div class="ho">
     <a style="padding-right:20%;padding-left:20%;" href="mailto:order@madindex.ml">Order via E-mail</a>

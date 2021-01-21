@@ -116,12 +116,11 @@ canvas {
     width: 50%;
     left: 37.5%;
 }
-
 .content {
     position: fixed;
     width: 100%;
-    color: #fff;
     z-index: 1001;
+    color: #fff;
     text-align: center;
 }
 section {
@@ -130,7 +129,7 @@ section {
 }
 hh {
     position: absolute;
-    top: 130%;
+    top: 120%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
