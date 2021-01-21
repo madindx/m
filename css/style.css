@@ -31,7 +31,7 @@ t {
     color: #fff;
     text-align: center;
 }
-ha, hb, hc {
+ha {
     display: block;
     font-size: 2em;
     margin-top: 0.67em;
@@ -46,7 +46,36 @@ ha, hb, hc {
     text-align: center;
     margin-left: 120%;
 }
-
+hb {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom:0.67em;
+    margin-right: 0;
+    font-weight: bold;
+    white-space: nowrap;
+    font-family: optima;
+    text-align: center;
+    color: #fff;
+    position: static;
+    text-align: center;
+    margin-left: 120%;
+}
+hc {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom:0.67em;
+    margin-right: 0;
+    font-weight: bold;
+    white-space: nowrap;
+    font-family: optima;
+    text-align: center;
+    color: #fff;
+    position: static;
+    text-align: center;
+    margin-left: 120%;
+}
 .box {
     display: flex;
     justify-content: center;
