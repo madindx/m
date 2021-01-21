@@ -22,6 +22,28 @@ canvas {
   margin-left:auto;
   margin-right:auto;
 }
+h1 {
+    white-space: nowrap;
+    font-family: optima;
+    text-align: center;
+    color: #fff;
+    position: static;
+    text-align: center;
+    margin-left: 150%;
+}
+ha {
+    white-space: nowrap;
+    font-family: optima;
+    font-size: 200%;
+    font-weight: bolder;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    position: static;
+    text-align: center;
+    margin-left: 150%;
+}
+
 .box {
     display: flex;
     justify-content: center;
