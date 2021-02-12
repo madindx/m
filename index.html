@@ -12,7 +12,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
     
 <script>
     
@@ -80,6 +80,12 @@ function removeLoader(){
 }
 </style>
     
+<hhh>
+</hhh>
+    
+<canvas style="top:0;z-index:5;position:fixed;width:200px;" id="hero-lightpass"></canvas>
+    
+    
 <div id="test">
 <div class="content">
     <section class="distort">
@@ -91,11 +97,6 @@ function removeLoader(){
      </section>
     </div>
 </div>
-
-
-<div class="divider"></div>
-    
-
     
 <script>
     const content = document.querySelector("section");
@@ -134,93 +135,13 @@ $(document).ready(function () {
 
 <div style="z-index:-1;" id="col1" class="parallax" data-parallax-rate="1.5">
     
-<canvas style="z-index:0;" id="hero-lightpass"></canvas>
-    
 </div>
+<section></section>
 
-    
-<script>
-    $(document).on("scroll", function() {
-        $("ha").css("margin-left", Math.max(120 - .8*window.scrollY,
-                     0) + "%");
-    })
-</script>
-    
-<script>
-    $(document).on("scroll", function() {
-        $("hb").css("margin-left", Math.max(120 - .7*window.scrollY,
-                     0) + "%");
-    })
-</script>
-    
-<script>
-    $(document).on("scroll", function() {
-        $("hc").css("margin-left", Math.max(120 - .6*window.scrollY,
-                     0) + "%");
-    })
-</script>
-
-
-
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 30, 2021 15:37:25").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + ":" + hours + ":"
-  + minutes + ":" + seconds + "s";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-</script>
+<footer>
+<p>Copyright &copy; Madindex 2020</p>
+</footer>
 
 <script src="madin.js"></script>
-    
-
-<p style="font-family:optima;color:#fff;text-align:center;padding-right:20%;padding-left:20%;margin-bottom:.3em;font-weight:bolder; font-size: 150%;"id="demo"></p>
-    
-<div class="ho">
-    <a style="padding-right:20%;padding-left:20%;" href="http://instagram.com/madindex/">Instagram</a>
-</div>
-
-<p style="margin-top:-1em;display:block;font-family:optima;color:#fff;text-align:center;padding-right:20%;padding-left:20%;font-size:60%;opacity:50%;">Instagram exclusive: Follow @madindex or visit http://instagram.com/madindex/</p>
-
-<div class="hdivider"></div>
-
-<ha><a href="mailto:order@madindex.ml">Order via Email</a></ha>
-    
-<hb><a href="mailto:contact@madindex.ml">Contact via Email</a></hb>
-    
-<hc><a href="http://instagram.com/madindex/">Follow on Instagram</a></hc>
-    
-    
-
-<div class="funny">
-</div>
-
-
-
-<t>Copyright &copy; Madindex 2020</t>
-
-   
 </body> 
 </html>
