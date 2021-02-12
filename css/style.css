@@ -76,7 +76,6 @@ xx:before {
 
 
 .content {
-    position: fixed;
     width: 100%;
     z-index: 1001;
     color: #fff;
