@@ -12,7 +12,7 @@ body {
     background-color: transparent;
 }
 hhh {
-    height: 100px;
+    height: 130px;
     width: 100%;
     background: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(245,0,0,0) 100%);
     position: fixed;
@@ -22,25 +22,15 @@ hhh {
 }
 
 .cont {
-    width: auto;
-    height: 500px;
+    z-index: 99999;
     border: 1px solid #fff;
-    margin: 30px;
-}
-
-@keyframes bounce {
-    0% {
-    }
-    100% {
-    transform: translateX(500%);
-    }
-}
-#cap {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    animation: bounce 5s infinite;
+    position: fixed;
+    margin: 10px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
 }
 
 canvas {
