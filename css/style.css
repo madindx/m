@@ -25,6 +25,8 @@ hhh {
     z-index: 99999;
     border: 1px solid #fff;
     position: fixed;
+    width: auto;
+    height: auto;
     margin: 10px;
     top: 0;
     right: 0;
