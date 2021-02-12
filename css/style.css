@@ -20,7 +20,14 @@ hhh {
 .sector {
     height: 500px;
 }
-
+.hey {
+    margin-top:.6em;width:100%;font-size:300%;font-family:optima;z-index:1;
+}
+@media only screen and (max-width: 600px) {
+    .hey {
+        font-size: 200%;
+    }
+}
 .cont {
     z-index: 99999;
     border: 1px solid #fff;
