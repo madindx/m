@@ -1,6 +1,6 @@
 html, body {
   overflow: hidden;
-  height: 150%;
+  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -16,20 +16,22 @@ hhh {
     width: 100%;
     background: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(0,0,0,.1) 100%);
     position: fixed;
+    z-index: 1;
 }
 .sector {
     height: 500px;
 }
 .hey {
-    margin-top:.6em;width:100%;font-size:300%;font-family:optima;z-index:1;
+    margin-top:.7em;width:100%;font-size:300%;font-family:optima;z-index:1;
 }
 @media only screen and (max-width: 600px) {
     .hey {
         font-size: 200%;
+        margin-top: 1em;
     }
 }
 .cont {
-    z-index: 99999;
+    z-index: 1;
     border: 1px solid #fff;
     position: fixed;
     width: auto;
@@ -48,7 +50,7 @@ canvas {
   height: auto;
   width: 50%;
   display: block;
-  z-index: -1;
+  z-index: 0;
 }
 xx {
     position: absolute;
