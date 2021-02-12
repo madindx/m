@@ -17,12 +17,10 @@ hhh {
     background: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(245,0,0,0) 100%);
     position: fixed;
 }
-section {
+.sector {
     height: 500px;
 }
-footer {
-    
-}
+
 canvas {
   position: relative;
   object-fit: cover;
@@ -65,12 +63,6 @@ xx:before {
 }
 
 
-#col1 {
-    position: fixed;
-    color: #fff;
-    width: 50%;
-    left: 37.5%;
-}
 .content {
     position: fixed;
     width: 100%;
