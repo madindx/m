@@ -18,6 +18,57 @@ hhh {
     position: fixed;
     z-index: 1;
 }
+
+.box {
+  background-color: #000;
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+  position: relative;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+.box b {
+  display: block;
+  width: 150px;
+  height: 150px;
+  background-image: url(/lo.png);
+  background-size: cover;
+  border-radius: 50%;
+  background-color: #3673cf;
+  box-shadow: inset -5px -5px 5px rgba(0,0,0,.6), 15px 15px 2px rgba(0,0,0,.04);
+  position: absolute;
+  -webkit-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  -moz-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  -o-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+}
+
+@-webkit-keyframes moveX {
+  from { left: 0; } to { left: 350px; }
+}
+@-moz-keyframes moveX {
+  from { left: 0; } to { left: 350px; }
+}
+@-o-keyframes moveX {
+  from { left: 0; } to { left: 350px; }
+}
+@keyframes moveX {
+  from { left: 0; } to { left: 350px; }
+}
+@-webkit-keyframes moveY {
+  from { top: 0; } to { top: 150px; }
+}
+@-moz-keyframes moveY {
+  from { top: 0; } to { top: 150px; }
+}
+@-o-keyframes moveY {
+  from { top: 0; } to { top: 150px; }
+}
+@keyframes moveY {
+  from { top: 0; } to { top: 150px; }
+}
+
 .sector {
     height: 500px;
 }
@@ -29,6 +80,22 @@ hhh {
         font-size: 200%;
         margin-top: 1.25em;
     }
+    hhh {
+        background: linear-gradient(90deg, rgba(0,0,0,1) 40%, rgba(0,0,0,.1) 100%);
+    }
+}
+
+.tl {
+    height: 10px;
+    width: 97%;
+    position: fixed;
+    top: 0;
+    bottom: 95%;
+    right 0;
+    left: 10px;
+    background-color: #000;
+    border-bottom: 1px solid #fff;
+    z-index: 9999;
 }
 .cont {
     z-index: 1;
