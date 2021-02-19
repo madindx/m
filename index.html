@@ -12,7 +12,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
 
-
+<script>
+   window.addEventListener('scroll', () => {
+  document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+}, false); 
+</script>
     
 <script>
     
@@ -35,6 +39,26 @@ function removeLoader(){
 }
 </script>
     
+<script>
+    
+$(window).on("load",function() {
+  $(window).scroll(function() {
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+    $(".fade").each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+      
+      /* If the element is completely within bounds of the window, fade it in */
+      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+        if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
+      } else { //object goes out of view (scrolling up)
+        if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+      }
+    });
+  }).scroll(); //invoke scroll-handler on page-load
+});
+    
+</script>
 
 <style>
 #test p {
@@ -82,7 +106,7 @@ function removeLoader(){
     
 <hhh>
 <div style="top:0;text-align:right; margin-right:30px;">
-<p class="hey">Madindex™</p>
+<p class="hey" id="test">Madindex™</p>
 </div>
 </hhh>
     
@@ -90,6 +114,7 @@ function removeLoader(){
     
     
 <div class="sector"></div>
+
     
 <div id="test">
 <div class="content">
@@ -97,11 +122,14 @@ function removeLoader(){
         <p>Booked until 2/30/21</p>
         <p>order@madindex.ml</p>
         <a style="border: 1px solid white; border-radius: 5px 5px; padding: 10px;" href="mailto:order@madindex.ml">PLACE ORDER</a>
+        
+        <div class="fade"><a href="#">Contact</a></div>
+        
      </section>
     </div>
 </div>
     
-<div class="box"><b href="https://instagram.com/madindex/"></b></div>
+
     
 
 <script>
@@ -143,16 +171,19 @@ $(document).ready(function () {
     
 </div>
 
-
     
-<div class="tl"></div>
     
 <div class="cont">
 </div>
 
 <div class="sector"></div>
     
-
+<div>
+  <div class="fade"><a href="#">Contact</a></div>
+    <div class="fade"><a href="#">Instagram</a></div>
+    <div class="fade"><a href="#">Order</a></div>
+    <div class="fade"><a href="#">Store</a></div>
+</div>
 
     
 <p style="text-align: center; padding-bottom: 20px;">Copyright &copy; Madindex 2020</p>
