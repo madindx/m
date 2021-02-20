@@ -90,7 +90,6 @@ canvas {
   height: auto;
   width: 50%;
   display: block;
-  z-index: 0;
 }
 xx {
     position: absolute;
@@ -128,7 +127,6 @@ xx:before {
 
 .content {
     width: 100%;
-    z-index: 1001;
     color: #fff;
     text-align: center;
 }
