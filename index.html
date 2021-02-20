@@ -27,13 +27,14 @@
 <script>
 $('body').append('<div style="" id="loadingDiv"><xx style="z-index:99999" data-text="Loading...">Loading...</xx></div>');
 $(window).on('load', function(){
-  setTimeout(removeLoader, 1500); //wait for page load PLUS two seconds.
+  setTimeout(removeLoader, 500); //wait for page load PLUS two seconds.
 });
 function removeLoader(){
     $( "#loadingDiv" ).fadeOut(500, function() {
         $('html, body').css({overflow: 'hidden'});
       // fadeOut complete. Remove the loading div
       $('html, body').css({overflow: 'visible'});
+ 
       $( "#loadingDiv" ).remove(); //makes page more lightweight 
   });  
 }
@@ -106,12 +107,20 @@ $(window).on("load",function() {
     
 <hhh>
 <div style="top:0;text-align:right; margin-right:30px;">
-<p class="hey" id="test">Madindex™</p>
+<p class="hey" id="test">
+    <div class="corridor">
+    <h1 style="margin: 0;font-size: 3em;overflow: hidden;line-height: 1;font-weight: normal;">
+    <span>Madindex™</span>
+    </h1>
+    </div>
 </div>
 </hhh>
     
+
+    
 <canvas style="padding-left:20px;top:20px;z-index:1;position:fixed;width:120px;" id="hero-lightpass"></canvas>
     
+
     
 <div class="sector"></div>
 
@@ -120,10 +129,16 @@ $(window).on("load",function() {
 <div class="content">
     <section class="distort">
         <p>Booked until 2/30/21</p>
-        <p>order@madindex.ml</p>
+        <div class="sector"></div>
+    <div style="padding-top: 2%;"></div>
         <a style="border: 1px solid white; border-radius: 5px 5px; padding: 10px;" href="mailto:order@madindex.ml">PLACE ORDER</a>
         
-        <div class="fade"><a href="#">Contact</a></div>
+<p style="opacity: 50%;font-size:.8em;margin-top:16px;">order@madindex.ml</p>
+        
+
+        
+        <div class="fade" style="text-align:left;"><a href="mailto:contact@madindex.ml">Contact</a></div>
+        <div class="fade" style="text-align:left;"><a href="http://instagram.com/madindex/">Work</a></div>
         
      </section>
     </div>
@@ -170,23 +185,13 @@ $(document).ready(function () {
 <div style="z-index:-1;" id="col1" class="parallax" data-parallax-rate="1.5">
     
 </div>
-
-    
-    
+ 
 <div class="cont">
 </div>
 
-<div class="sector"></div>
+ <div class="fade" style="text-align:center;"><p>Copyright &copy; Madindex 2020</p></div>
     
-<div>
-  <div class="fade"><a href="#">Contact</a></div>
-    <div class="fade"><a href="#">Instagram</a></div>
-    <div class="fade"><a href="#">Order</a></div>
-    <div class="fade"><a href="#">Store</a></div>
-</div>
-
-    
-<p style="text-align: center; padding-bottom: 20px;">Copyright &copy; Madindex 2020</p>
+<p style="text-align: center; padding-bottom: 20px;">All Rights Reserved</p>
 
 
 <script src="madin.js"></script>

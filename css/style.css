@@ -19,6 +19,33 @@ hhh {
     z-index: 1;
 }
 
+.corridor {
+  margin: 0 auto;
+}
+ span {
+  opacity: 0;
+  text-align: right;
+  display: block;
+  animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes reveal
+{
+    0% 
+    {
+        transform: translate(0,100%);
+    }
+    100% 
+    {
+        opacity: 100%;
+        transform: translate(0,0);
+
+    }
+}
+
+
 .fade {
   font-size: 200%;
   margin: 50px;
