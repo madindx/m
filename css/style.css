@@ -64,11 +64,11 @@ h1 {
 }
 @media only screen and (max-width: 600px) {
     .hey {
-        font-size: 2em;
+        font-size: 2.2em;
         margin-top: 1.25em;
     }
     h1 {
-        font-size: 2em;
+        font-size: 2.2em;
     }
     hhh {
         background: linear-gradient(90deg, rgba(0,0,0,1) 40%, rgba(0,0,0,.1) 100%);
