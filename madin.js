@@ -39,4 +39,4 @@ window.addEventListener('scroll', () => {
   requestAnimationFrame(() => updateImage(frameIndex + 1))
 });
 
-preloadImages()
+preloadImages();

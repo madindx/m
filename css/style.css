@@ -12,11 +12,34 @@ body {
     background-color: transparent;
 }
 hhh {
-    height: 130px;
+    height: 200px;
     width: 100%;
-    background: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(0,0,0,.1) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(0,0,0,.1) 100%);
     position: fixed;
     z-index: 1;
+}
+/*hhh height 130*/
+
+@font-face {
+    font-family: "newyork";
+    src: url("/newyork.otf");
+}
+
+.cv {
+    display: none;
+    width: auto;
+    height: auto;
+    position: fixed;
+    color: #000;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    background-color: #fff;
+    z-index: 2;
+    opacity: 100%;
 }
 
 .corridor {
@@ -71,7 +94,7 @@ h1 {
         font-size: 2.2em;
     }
     hhh {
-        background: linear-gradient(90deg, rgba(0,0,0,1) 40%, rgba(0,0,0,.1) 100%);
+        background: linear-gradient(180deg, rgba(0,0,0,1) 60%, rgba(0,0,0,.1) 100%);
     }
 }
 
@@ -79,6 +102,21 @@ h1 {
     pointer-events: none;
     z-index: 1;
     border: 1px solid #fff;
+    position: fixed;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.comp {
+    pointer-events: none;
+    z-index: 4;
+    border: 1px solid #000;
     position: fixed;
     width: auto;
     height: auto;

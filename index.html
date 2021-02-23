@@ -9,6 +9,7 @@
 </head>
 <body> 
     
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
 
@@ -113,34 +114,43 @@ $(window).on("load",function() {
 <p class="hey" id="test">
     <div class="corridor">
     <h1 style="margin:0;overflow:hidden;line-height:1;font-weight:normal;">
-    <span>Madindex™</span>
+    <span style="font-family:newyork">MADINDEX™</span>
     </h1>
     </div>
 </div>
     
 <canvas style="padding-left:20px;top:20px;z-index:1;position:fixed;width:120px;" id="hero-lightpass"></canvas>
     
+<script>
 
+function togglediv(id) {
+    var div = document.getElementById(id);
+    div.style.display = div.style.display == "none" ? "block" : "none";
+}
+    
+</script>
+    
+<div id="item" class="cv" style="font-family:newyork;font-size:300%;">
+<div class="comp">
+</div>
+    <p style="font-family:optima;">╳</p>
+    <p style="padding-top: 1em;"></p>
+    <a style="color: #000;" href="mailto:order@madindex.ml">Order</a>
+    <p style="padding-top: 1em;"></p>
+    <a style="color: #000;" href="mailto:contact@madindex.ml">Contact</a>
+    <p style="padding-top: 1em;"></p>
+    <a style="color: #000;" href="http://instagram.com/madindex/">Work</a>
+</div>
     
 <div class="sector"></div>
 
+<button style="z-index:3;position:fixed;top:0;width:100%;height:200px;opacity:0;" onclick="togglediv('item')">Toggle div</button>     
     
 <div id="test">
 <div class="content">
     <section class="distort">
-        <p>Booked until 2/30/21</p>
+        <p >Booked until 2/30/21</p>
         <div class="sector"></div>
-    <div style="padding-top: 2%;"></div>
-        <a style="border: 1px solid white; border-radius: 5px 5px; padding: 10px;" href="mailto:order@madindex.ml">PLACE ORDER</a>
-        
-<p style="opacity: 50%;font-size:.8em;margin-top:16px;">order@madindex.ml</p>
-        
-
-        
-        <div class="fade" style="text-align:left;"><a href="mailto:contact@madindex.ml">Contact</a></div>
-        <div class="fade" style="text-align:left;"><a href="mailto:contact@madindex.ml">About</a></div>
-        <div class="fade" style="text-align:left;"><a href="http://instagram.com/madindex/">Work</a></div>
-        
      </section>
     </div>
 </div>
