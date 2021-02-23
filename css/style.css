@@ -24,7 +24,9 @@ hhh {
     font-family: "newyork";
     src: url("/newyork.otf");
 }
-
+optima {
+    font-family: optima;
+}
 .cv {
     display: none;
     width: auto;
