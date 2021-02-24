@@ -44,9 +44,14 @@ optima {
     opacity: 100%;
 }
 
+#col1 {
+    position: fixed;
+}
+
 .corridor {
   margin: 0 auto;
 }
+
  span {
   opacity: 0;
   text-align: right;
