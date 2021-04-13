@@ -12,9 +12,9 @@ body {
     background-color: transparent;
 }
 hhh {
-    height: 200px;
+    height: 300px;
     width: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(0,0,0,.1) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(0,0,0,.01) 100%);
     position: fixed;
     z-index: 1;
 }
@@ -104,19 +104,117 @@ h1 {
     }
 }
 
+
+.contain {
+    animation: dark 3s linear forwards;
+    animation-delay 2s;
+    filter: brightness(.2);
+}
+
+@keyframes dark {
+    0% {
+        filter:brightness(.2);
+    }
+    100% {
+        filter:brightness(.5);
+    }
+}
+
+.dunes {
+    animation: dune 3s linear forwards;
+    animation-delay: 2s;
+    filter: blur(50px);
+}
+
+@keyframes dune {
+    0% {
+        filter:blur(50px);
+    }
+    100% {
+        filter:blur(0px);
+    }
+}
+
 .cont {
     pointer-events: none;
     z-index: 1;
-    border: 1px solid #fff;
     position: fixed;
     width: auto;
     height: auto;
     margin: 10px;
     top: 0;
-    right: 0;
+    right: 100%;
+    left: 100%;
     bottom: 0;
-    left: 0;
     overflow: auto;
+    animation: keys 4s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+}
+
+.cont2 {
+    pointer-events: none;
+    z-index: 1;
+    position: fixed;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    top: 0;
+    right: 100%;
+    left: 100%;
+    bottom: 0;
+    overflow: auto;
+    animation: keys2 4s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+}
+
+@keyframes keys {
+    0% {
+        border-top: 1px solid #fff;
+        top: 0;
+        right: 0;
+        left: 100%;
+        bottom: 100%;
+    }
+    25% {
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+        top: 0;
+        right: 0;
+        left: 100%;
+        bottom: 100%;
+    }
+    100% {
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+@keyframes keys2 {
+    0% {
+        border-bottom: 1px solid #fff;
+        top: 100%;
+        right: 100%;
+        left: 100%;
+        bottom: 0;
+    }
+    25% {
+        border-bottom: 1px solid #fff;
+        border-left: 1px solid #fff;
+        top: 100%;
+        right: 100%;
+        left: 0;
+        bottom: 0;
+    }
+    100% {
+        border-bottom: 1px solid #fff;
+        border-left: 1px solid #fff;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
 }
 
 .comp {
@@ -193,13 +291,13 @@ color: white;}
     border-radius: 50%;
     width: 100%;
     height: 1000%;
-    z-index: 999;
+    z-index: 99;
 }
 #loadingDiv {
     position:absolute;
     text-align: center;
     width:100%;
     height:1000%;
-    background-color:#FFF;
-    z-index: 999;
+    background-color:#000;
+    z-index: 99;
 }
