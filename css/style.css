@@ -148,6 +148,7 @@ h1 {
     bottom: 0;
     overflow: auto;
     animation: keys 4s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+    -webkit-animation: keys 4s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
 }
 
 .cont2 {
@@ -163,6 +164,7 @@ h1 {
     bottom: 0;
     overflow: auto;
     animation: keys2 4s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+    -webkit-animation: keys2 4s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
 }
 
 @keyframes keys {
