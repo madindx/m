@@ -110,7 +110,7 @@ h1 {
         background: linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(0,0,0,.01) 100%);
     }
     .contain {
-        padding-top: 30%;
+        padding-top: 50%;
     }
 }
 
@@ -142,7 +142,7 @@ h1 {
 
 .cont {
     pointer-events: none;
-    z-index: 2;
+    z-index: 9;
     position: fixed;
     width: auto;
     height: auto;
@@ -158,7 +158,7 @@ h1 {
 
 .cont2 {
     pointer-events: none;
-    z-index: 1;
+    z-index: 9;
     position: fixed;
     width: auto;
     height: auto;
@@ -189,8 +189,8 @@ h1 {
         bottom: 100%;
     }
     100% {
-        border-top: 1px solid #fff;
-        border-right: 1px solid #fff;
+        border-top: 5px solid #fff;
+        border-right: 5px solid #fff;
         top: 0;
         right: 0;
         left: 0;
