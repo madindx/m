@@ -133,31 +133,14 @@ $(window).on("load",function() {
 </div>
 </div>
 
-    
+   
+<!--
 <canvas style="padding-left:20px;top:20px;z-index:1;position:fixed;width:120px;" id="hero-lightpass"></canvas>
-    
-    
-    
-<script>
+-->
 
-function togglediv(id) {
-    var div = document.getElementById(id);
-    div.style.display = div.style.display == "none" ? "block" : "none";
-}
     
-</script>
+  <div class="css-selector" style="height:100%;width:100%;"></div>
     
-<div id="item" class="cv" style="font-family:newyork;font-size:300%;">
-<div class="comp">
-</div>
-    <p style="font-family:optima;">╳</p>
-    <p style="padding-top: 10%;"></p>
-    <a style="color: #000;" href="mailto:order@madindex.ml">Order</a>
-    <p style="padding-top: 3%;"></p>
-    <a style="color: #000;" href="mailto:contact@madindex.ml">Contact</a>
-    <p style="padding-top: 3%;"></p>
-    <a style="color: #000;" href="http://instagram.com/madindex/">Work</a>
-</div>
     
 <style>
     .nb {
@@ -185,52 +168,34 @@ function togglediv(id) {
         
     </div>
 
+   <!--
+
 <div class="contain">
-<div class="dunes">
-<img src="/ray.png" style="width:100%;left:0;right:0;filter:brightness(.6);display:block;">
-</div>
-</div>
-    
-    
-    
-<div class="contain">
-<div class="dunes">
-<img src="/ray.png" style="width:100%;left:0;right:0;filter:brightness(.6);transform:rotateX(180deg);display:block;">
-</div>
-</div>
-    
-    <style>
-    
-        .arrow {
-            width: 20px;
-            height: 20px;
-            border-bottom: 2px solid #fff;
-            border-left: 2px solid #fff;
-            border-radius: 2px;
-            transform: rotate(-45deg);
-        }
-    
-    </style>
-    
- <div class="fade" style="z-index:1;position:absolute;text-align:center;top:100%;left:50%;transform:translate(-50%,-50%);"><div class="arrow"></div></div>
-
-    
-    
-<div class="contain">
-<div class="dunes">
-<img src="/ray.png" style="width:100%;left:0;right:0;filter:brightness(.6);display:block;">
-</div>
-</div>
-
-
-<button style="z-index:10000;position:fixed;top:0;width:100%;height:200px;opacity:0;" onclick="togglediv('item')">Toggle div</button>    
-    
-    
-    
-
+<div class="dunes">  
  
+<img src="/ray.png" style="width:100%;left:0;right:0;filter:brightness(.6);display:block;">
     
+</div>
+</div>
+-->
+    
+
+<div class="marquee">
+  <div>
+    <span>Copyright &copy; Madindex 2021 | Web Design | 3D Graphics |</span>
+    <span>Copyright &copy; Madindex 2021 | Web Design | 3D Graphics |</span>
+  </div>
+</div>
+
+
+
+
 <!--
+<button style="z-index:10000;position:fixed;top:0;width:100%;height:200px;opacity:0;" onclick="togglediv('item')">Toggle div</button>  
+
+
+
+
 <div id="test">
 <div class="content">
     <section class="distort">
@@ -294,6 +259,7 @@ $(document).ready(function () {
     
     .bg {
   position: fixed;
+  z-index: 999999;
   top: -50%;
   left: -50%;
   right: -50%;
@@ -303,7 +269,7 @@ $(document).ready(function () {
   background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation .2s infinite;
-  opacity: .9;
+  opacity: 100%;
   visibility: visible;
 }
 
@@ -328,12 +294,6 @@ $(document).ready(function () {
     
 </div>
 
-
-
-
- <div class="fade" style="text-align:center;"><p>Copyright &copy; Madindex 2020</p></div>
-
-<div style="padding-top:7%;"></div>
 
 <script src="madin.js"></script>
 </body> 
