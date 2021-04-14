@@ -159,8 +159,26 @@ function togglediv(id) {
     <a style="color: #000;" href="http://instagram.com/madindex/">Work</a>
 </div>
     
+<style>
+    .nb {
+        opacity: 0;
+        animation: fp 2s linear;
+        animation-fill-mode: forwards; 
+        animation-delay: 4s;
+    }
+    @keyframes fp {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 100;
+        }
+    }
     
-    <div style="position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);">
+</style>
+
+
+    <div class="nb" style="position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);">
     <p style="text-align:center;margin:0;display:block;font-size:6em;font-family:newyork;filter: contrast(80%);mix-blend-mode:difference;">Booked</p>
     
     <p style="text-align:center;display:block;margin:0;font-size:2em;mix-blend-mode:difference;filter: contrast(50%);">Until 4/22/21</p>
