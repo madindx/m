@@ -113,7 +113,7 @@ $(window).on("load",function() {
 
 </hhh>
     
-<div style="position:fixed;right:0;z-index:100;top:0;text-align:right; margin-right:30px;">
+<div style="position:fixed;right:0;z-index:100;top:0;text-align:right; margin-right:50px;">
 <p class="hey" id="test">
     <div class="corridor">
     <h1 style="margin:0;overflow:hidden;line-height:1;font-weight:normal;">
@@ -187,14 +187,45 @@ function togglediv(id) {
 
 <div class="contain">
 <div class="dunes">
-<img src="/ray.png" style="width:200%;left:0;right:0;filter:brightness(.6);">
+<img src="/ray.png" style="width:100%;left:0;right:0;filter:brightness(.6);display:block;">
 </div>
 </div>
     
+    
+    
+<div class="contain">
+<div class="dunes">
+<img src="/ray.png" style="width:100%;left:0;right:0;filter:brightness(.6);transform:rotateX(180deg);display:block;">
+</div>
+</div>
+    
+    <style>
+    
+        .arrow {
+            width: 20px;
+            height: 20px;
+            border-bottom: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-radius: 2px;
+            transform: rotate(-45deg);
+        }
+    
+    </style>
+    
+ <div class="fade" style="z-index:1;position:absolute;text-align:center;top:100%;left:50%;transform:translate(-50%,-50%);"><div class="arrow"></div></div>
+
+    
+    
+<div class="contain">
+<div class="dunes">
+<img src="/ray.png" style="width:100%;left:0;right:0;filter:brightness(.6);display:block;">
+</div>
+</div>
 
 
-
-<button style="z-index:10000;position:fixed;top:0;width:100%;height:200px;opacity:0;" onclick="togglediv('item')">Toggle div</button>     
+<button style="z-index:10000;position:fixed;top:0;width:100%;height:200px;opacity:0;" onclick="togglediv('item')">Toggle div</button>    
+    
+    
     
 
  
