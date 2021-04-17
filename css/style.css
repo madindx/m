@@ -177,6 +177,9 @@ h1 {
     hhh {
         background: linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(0,0,0,.01) 100%);
     }
+    .marquee {
+        width: 96%;
+    }
     .marquee:after {
         background-image: none;
     }
