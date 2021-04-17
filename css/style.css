@@ -9,6 +9,7 @@ html, body {
   background-color: #000;
 }
 body {
+    position: fixed;
     box-shadow: 0 0 100px #3d3d3d inset;
     color: #fff;
     font-family: optima;
