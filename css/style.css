@@ -87,7 +87,7 @@ optima {
     mix-blend-mode: screen;
     opacity: 100%;
     z-index: 9999;
-    position: absolute;
+    position: fixed;
     background: linear-gradient(231deg, #5396ff, #4500ff, #4500ff, #675fff, #3100b8, #170057);
     background-size: 1200% 1200%;
 
