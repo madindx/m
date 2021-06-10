@@ -91,6 +91,7 @@ optima {
     position: fixed;
     background: linear-gradient(231deg, #5396ff, #4500ff, #4500ff, #675fff, #3100b8, #170057);
     background-size: 1200% 1200%;
+    pointer-events: none;
 
     -webkit-animation: AnimationName 9s ease infinite;
     -moz-animation: AnimationName 9s ease infinite;

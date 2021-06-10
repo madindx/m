@@ -5,16 +5,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content= "ie=edge">
-    <title>MADINDEX</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Madindex</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body> 
-    
-<meta name='viewport' 
-     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, 
-     user-scalable=0' >
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
@@ -23,14 +18,12 @@
    window.addEventListener('scroll', () => {
   document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
 }, false); 
-</script>
     
-<script>
-    
-  window.onbeforeunload = function () {
+    window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
 </script>
+    
 <script>
 $('body').append('<div style="" id="loadingDiv"><xx style="z-index:99" data-text=" "> </xx></div>');
 $(window).on('load', function(){
@@ -111,7 +104,9 @@ $(window).on("load",function() {
     }
 }
 </style>
-    
+
+<body>    
+
 <hhh>
 
 </hhh>
@@ -274,6 +269,7 @@ $(document).ready(function () {
   animation: bg-animation .2s infinite;
   opacity: 100%;
   visibility: visible;
+  pointer-events: none;
 }
 
 @keyframes bg-animation {
@@ -292,12 +288,53 @@ $(document).ready(function () {
     
 </style>
 
-<div class="bg">
-    
-    
+<div class="bg">  
 </div>
+    
+<script>
+    const html = document.documentElement;
+const canvas = document.getElementById("hero-lightpass");
+const context = canvas.getContext("2d");
 
+const frameCount = 61;
+const currentFrame = index => (
+  `seq/m_${index.toString().padStart(5, '0')}.jpg`
+)
 
-<script src="madin.js"></script>
+const preloadImages = () => {
+  for (let i = 1; i < frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+  }
+};
+
+const img = new Image()
+img.src = currentFrame(1);
+canvas.width=540;
+canvas.height=350;
+img.onload=function(){
+  context.drawImage(img, 0, 0);
+}
+
+const updateImage = index => {
+  img.src = currentFrame(index);
+  context.drawImage(img, 0, 0);
+}
+
+window.addEventListener('scroll', () => {  
+  const scrollTop = html.scrollTop;
+  const maxScrollTop = html.scrollHeight - window.innerHeight;
+  const scrollFraction = scrollTop / maxScrollTop;
+  const frameIndex = Math.min(
+    frameCount - 1,
+    Math.ceil(scrollFraction * frameCount)
+  );
+  
+  requestAnimationFrame(() => updateImage(frameIndex + 1))
+});
+
+preloadImages();
+</script>
+    
 </body> 
 </html>
