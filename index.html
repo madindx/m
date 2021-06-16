@@ -10,11 +10,10 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
-<script src="turn.js"></script>
     
 <script>
 var imgs = [];
-var imgUrls = ["instagram.png"];
+var imgUrls = ["instagram.png", "m_0.png", "m_00000.jpg"];
 for (i=0;i<imgUrls.length;i++) {
     imgs.push(new Image());
     imgs[i].src = imgUrls[i]
@@ -24,39 +23,22 @@ for (i=0;i<imgUrls.length;i++) {
 <script>
 $('body').append('<div id="loader"></div>');
 $(window).on('load', function(){
-  document.getElementById("anim").style.transform = "translate(-50%,-50%) scale(1)";
-  setTimeout(removeLoader, 1000);
+  setTimeout(removeLoader, 3000);
 });
 function removeLoader(){
-    //document.getElementById("anim").style.transform = "translate(-50%,-50%) scale(.9)";
     $( "#loader" ).fadeOut(1500, function() {
       $('html, body').css({overflow: 'hidden'});
       $('html, body').css({overflow: 'visible'});
       $( "#loader" ).remove();
+      document.getElementById("hero").style.animation = "slideup 1s ease";
+      setTimeout(function() {
+          document.getElementById("hero").style.animation = "float 25s linear infinite";
+      },1000);
   });  
 }
 </script>
 
 <style>
-    html {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-    }
-    img {
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    user-drag: none;
-    }
-    @font-face {
-        font-family: 'akira';
-        src: url("akira.otf");
-    }
     @font-face {
         font-family: 'klik';
         src: url("klik.otf");
@@ -94,7 +76,7 @@ function removeLoader(){
         src: url("dico.ttf");
     }
     body {
-        background: #141414;
+        background: #000;
         color: #fff;
         margin: 20px;
     }
@@ -179,10 +161,20 @@ function removeLoader(){
         position: fixed;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%) scale(.1);
-        width: 40%;
+        transform: translate(-50%,-50%);
+        width: 70%;
         background-image: url(seq3/intro_0.png);
-        transition: .5s ease;
+    }
+    .heading {
+        font-family: 'rock';
+        text-align: left;
+        padding-left: 10%;
+        font-size: 150%;
+    }
+    .content {
+        font-family: 'klik';
+        text-align: center;
+        font-size: 100%;
     }
     .wrapper {
         margin: 5%;
@@ -198,6 +190,53 @@ function removeLoader(){
         z-index:2;
         margin: auto;
     }
+    .floater {
+        position: fixed;
+        /*transform: scaleY(-1);
+        animation: float 25s linear infinite;*/
+        animation: none;
+        width: 150%;
+        margin: auto;
+        top: 0;
+        z-index: -1;
+        left: -25%;
+        right: 0;
+        transform: translate(-2.5%,2.5%);
+    }
+    @keyframes float {
+        0% {
+            transform: translate(-2.5%,2.5%);
+        }
+        12.5% {
+            transform: translate(-5%,0%);
+        }
+        25% {
+            transform: translate(-2.5%,-2.5%) rotate(-3deg);
+        }
+        37.5% {
+            transform: translate(0%,-5%);
+        }
+        50% {
+            transform: translate(2.5%,-2.5%) rotate(3deg);
+        }
+        62.5% {
+            transform: translate(5%,0%);
+        }
+        75% {
+            transform: translate(2.5%,2.5%);
+        }
+        87.5% {
+            transform: translate(0%,5%);
+        }
+        100% {
+            transform: translate(-2.5%,2.5%);
+        }
+    }
+    @keyframes slideup {
+        0% {
+            
+        }
+    }
     .header {
         position: fixed;
         top: 0;
@@ -206,88 +245,60 @@ function removeLoader(){
         height: 13vw;
         background: #000;
         z-index: 2;
-        box-shadow: 0 0 8vw rgb(0,0,0,.8);
     }
-    .overcast {
-        position: fixed;
+    .backdrop {
         top: 0;
-        left: 0;
-        width: 100%;
-        height: 13vw;
-        background: linear-gradient(#000, #242429);
-        z-index: 5;
-        mix-blend-mode: screen;
-    }
-    .page {
-        background: linear-gradient(#2b2b33, #242429, #141414);
-        box-shadow: inset 0 0 15vw rgb(0,0,0,.8);
-        color: #fff;
-    }
-    .book {
-        position: absolute;
-        width: 80%;
-        height: 80%;
-        margin: auto;
+        bottom: 0;
         left: 0;
         right: 0;
-        margin-top: 18vw;
-        box-shadow: 0 0 5vw 6vw rgb(0,0,0,.8);
-        z-index: 1;
+        z-index: -2;
+        background: #000;
+        position: fixed;
     }
-    .footer {
-        position: absolute;
+    .glare {
+        pointer-events: none;
+        position: fixed;
         width: 100%;
-        height: 50vw;
+        height: 100%;
         left: 0;
         right: 0;
-        background: linear-gradient(#2b2b33, #242429, #141414);
+        z-index: 3;
+        mix-blend-mode: color-dodge;
+        opacity: 80%;
+        background: linear-gradient(222deg, #666666, #2d2d2d, #666666, #b1b1b1, #666666, #c2c2c2, #666666, #3c3c3c, #666666, #515151, #424242);
+        background-size: 2200% 2200%;
+
+        -webkit-animation: AnimationName 9s ease infinite;
+        -moz-animation: AnimationName 9s ease infinite;
+        -o-animation: AnimationName 9s ease infinite;
+        animation: AnimationName 9s ease infinite;
     }
-    .title {
-        font-family: 'akira';
-        text-align: left;
-        padding-left: 8%;
-        font-size: 300%;
-        margin-bottom: 0;
-        color: #d3d3db;
+
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 51%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 51%}
     }
-    .heading {
-        font-family: 'klik'; /*rock*/
-        text-align: left;
-        padding-left: 8%;
-        font-size: 150%;
-        margin: 0;
-        color: #c4c4cf;
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 51%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 51%}
     }
-    .content {
-        font-family: 'klik';
-        padding: 1%;
-        padding-left: 15%;
-        font-size: 100%;
-        color: #c4c4cf;
-        margin: 0;
-        transition: .3s ease;
+    @-o-keyframes AnimationName {
+        0%{background-position:0% 51%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 51%}
     }
-    .content:hover {
-        background: linear-gradient(90deg, #2b2b33, #c4c4cf, #2b2b33);
-        color: #242429;
+    @keyframes AnimationName {
+        0%{background-position:0% 51%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 51%}
     }
-    .pagebutton {
-        position: absolute;
-        width: 5%;
-        height: 5%;
-        background: transparent;
-        z-index: 1;
-        bottom: 2%;
-        left: 50%;
-        transform: translateX(-50%);
-        font-family: code;
-        font-size: 300%;
-        text-shadow: 0 0 10px #000;
-        opacity: 50%;
-        transition: 1s ease;
-    }
-    .pagebutton:hover {
-        opacity: 100%;
+    .mouse {
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        background: red;
     }
 </style>
 
@@ -355,51 +366,21 @@ function removeLoader(){
         <img class="anim" id="anim"/>
     </div>
 
-    <div class="overcast"></div>
     <div class="header"></div>
     <canvas class="logo" id="hero2"></canvas>
-    
-    <div class="book" id="book">
-    <div id="flipbook">
-	<div class="page" style="background:linear-gradient(#2b2b33, #242429, #141414);">
-        <p class="title">Madindex™</p>
-        <p class="heading">Est 2019/ &nbsp; Multimedia Designer, &nbsp; Creative Dir.</p>
-        <p class="content" style="padding-top: 5%; pointer-events: none;">Table of Contents</p>
-        
-        <p class="content">&emsp; <span style="font-family:code;font-size:120%;">&gt;</span> Title - Madindex™ June 2021 &emsp; <span style="font-family:code;font-size:120%;">&gt;&gt;</span> Current</p>
-        <p class="content">&emsp; <span style="font-family:code;font-size:120%;">&gt;&gt;</span> Introspection - about Madindex™</p>
-        <p class="content">&emsp; <span style="font-family:code;font-size:120%;">&gt;&gt;&gt;</span> Selected work</p>
-        <p class="content">&emsp; <span style="font-family:code;font-size:120%;">&gt;&gt;&gt;&gt;</span> Instagram - contact information</p>
-        
-        <p class="heading" style="padding-top: 4%;"><span style="font-family:pixel;font-size:120%;">! ! !</span> &emsp; Notice</p>
-        
-        <p class="content" style="padding-top: 5%; pointer-events: none;">Website is currently under development</p>
-        
-        <p class="content">&emsp; <span style="font-family:code;font-size:120%;">&gt;</span> Email for updates : &emsp; Contact@madindex.ml</p>
-        
-    </div>
-	<div class="page">
-        <p class="title">Selected work</p>
-        <p class="heading">Curated from archives</p>
-        <p class="content"></p>
-    </div>
-    <div class="page">
-        <p class="title"></p>
-        <p class="heading"></p>
-        <p class="content"></p>
-    </div>
-</div>
-</div>
 
-    <div id="pagenext" class="pagebutton" style="left: 60%;"> &gt;
-    </div>
-    <div id= "pageback" class="pagebutton" style="left: 40%;"> &lt;
-    </div>
-    
+
     <div id="main">
         
     <button class="menuon"></button>
-    <button class="menuoff"></button>          
+    <button class="menuoff"></button>
+    
+    <div class="glare"></div>
+        
+            
+    <canvas class="floater" id="hero"></canvas>
+        
+    <div class="backdrop"></div>
     
     <div class="layout"></div>
         
@@ -418,8 +399,7 @@ function removeLoader(){
     </p>
     -->
         
-        <div style="height:90vh;"></div>
-        <div class="footer"></div>
+        <div style="height:2000px;"></div>
         
     <p class="content">
         <span></span>&emsp;
@@ -438,30 +418,8 @@ function removeLoader(){
     
 </body> 
     
-<script type="text/javascript">
-	$("#flipbook").turn({
-		width: '100%',
-		height: '100%',
-        display: 'single',
-		autoCenter: true
-	});
-    
-    function isMobile() {
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-
-    if (!isMobile()) {
-    window.addEventListener('resize', function () {
-        setTimeout(function() {
-        location = location;
-            },500);
-    });
-    }
-    
-</script>
-    
 <script>
-    var skew = document.getElementById('book');
+    var skew = document.getElementById('hero');
 
     window.onmousemove = function (e) {
         var x = e.clientX,
@@ -476,21 +434,26 @@ function removeLoader(){
     
 const $element = $('.anim');
 const imagePath = '/seq3';
-const totalFrames = 18;
-const animationDuration = 800;
+const totalFrames = 29;
+const animationDuration = 1000;
 const timePerFrame = animationDuration / totalFrames;
 let timeWhenLastUpdate;
 let timeFromLastUpdate;
 let frameNumber = 0;
 
 function step2(startTime) {
+    
+    if (frameNumber == 29) {
+    document.getElementById("anim").style.backgroundImage = "url(seq3/intro_29.png)";
+        return;
+}
 
   if (!timeWhenLastUpdate) timeWhenLastUpdate = startTime;
   timeFromLastUpdate = startTime - timeWhenLastUpdate;
 
   if (timeFromLastUpdate > timePerFrame) {
 
-    $element.attr('src', imagePath + `/load_${frameNumber}.png`);
+    $element.attr('src', imagePath + `/intro_${frameNumber}.png`);
     timeWhenLastUpdate = startTime;
 
     if (frameNumber >= totalFrames) {
@@ -516,13 +479,6 @@ $(window).on('load', () => {
 </script>
     
 <script>
-    $('#pageback').click(function() {
-    $('#flipbook').turn('previous');
-    });
-     $('#pagenext').click(function() {
-    $('#flipbook').turn('next');
-    });
-    
     $('.menuOn').click(function() {
         document.getElementById("menu").style.animation = "menuin 1s forwards";
         document.getElementById("main").style.display = "none";
