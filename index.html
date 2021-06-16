@@ -14,7 +14,7 @@
     
 <script>
 var imgs = [];
-var imgUrls = ["instagram.png", "m_0.png", "m_00000.jpg"];
+var imgUrls = ["instagram.png"];
 for (i=0;i<imgUrls.length;i++) {
     imgs.push(new Image());
     imgs[i].src = imgUrls[i]
@@ -197,48 +197,6 @@ function removeLoader(){
         top:1%;
         z-index:2;
         margin: auto;
-    }
-    .floater {
-        position: fixed;
-        /*transform: scaleY(-1);
-        animation: float 25s linear infinite;*/
-        animation: none;
-        width: 150%;
-        margin: auto;
-        top: 0;
-        z-index: -1;
-        left: -25%;
-        right: 0;
-        transform: translate(-2.5%,2.5%);
-    }
-    @keyframes float {
-        0% {
-            transform: translate(-2.5%,2.5%);
-        }
-        12.5% {
-            transform: translate(-5%,0%);
-        }
-        25% {
-            transform: translate(-2.5%,-2.5%) rotate(-3deg);
-        }
-        37.5% {
-            transform: translate(0%,-5%);
-        }
-        50% {
-            transform: translate(2.5%,-2.5%) rotate(3deg);
-        }
-        62.5% {
-            transform: translate(5%,0%);
-        }
-        75% {
-            transform: translate(2.5%,2.5%);
-        }
-        87.5% {
-            transform: translate(0%,5%);
-        }
-        100% {
-            transform: translate(-2.5%,2.5%);
-        }
     }
     .header {
         position: fixed;
@@ -441,10 +399,7 @@ function removeLoader(){
     <div id="main">
         
     <button class="menuon"></button>
-    <button class="menuoff"></button>     
-            
-    <canvas class="floater" id="hero" style="display:none;"></canvas>
-        
+    <button class="menuoff"></button>          
     
     <div class="layout"></div>
         
