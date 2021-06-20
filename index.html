@@ -23,14 +23,51 @@ for (i=0;i<imgUrls.length;i++) {
 <script>
 $('body').append('<div id="loader"></div>');
 $(window).on('load', function(){
-  setTimeout(removeLoader, 3000);
+    
+    $('.loadlogo').css({
+        opacity: '100%',
+        filter: 'blur(0)',
+        marginTop: '0'
+        });
+    
+    
+    setTimeout(function() {
+    $('.loadreveal').css({
+        transform: 'translate(-50%,-50%) rotate(-180deg)',
+        opacity: '50%'
+        });
+        
+    $('.loadswish').css({
+        opacity: '100%'
+        });
+    },600);
+    
+    setTimeout(function() {     
+    $('.loadlogo').css({
+        transition: '1s ease',
+        opacity: '0%',
+        marginTop: '-10vw'
+        });
+    $('.loadswish').css({
+        transition: '1s ease',
+        opacity: '0%',
+        marginTop: '-10vw'
+        });
+    $('.loadreveal').css({
+        transition: '1s ease',
+        opacity: '0%',
+        marginTop: '-10vw'
+        });
+    },1400);
+    
+  setTimeout(removeLoader, 1500);
 });
 function removeLoader(){
     $( "#loader" ).fadeOut(1500, function() {
       $('html, body').css({overflow: 'hidden'});
       $('html, body').css({overflow: 'visible'});
+        
       $( "#loader" ).remove();
-      document.getElementById("hero").style.animation = "slideup 1s ease";
       setTimeout(function() {
           document.getElementById("hero").style.animation = "float 25s linear infinite";
       },1000);
@@ -39,6 +76,14 @@ function removeLoader(){
 </script>
 
 <style>
+    @font-face {
+        font-family: 'brobold';
+        src: url("brobold.ttf");
+    }
+    @font-face {
+        font-family: 'bro';
+        src: url("bronova.ttf");
+    }
     @font-face {
         font-family: 'klik';
         src: url("klik.otf");
@@ -74,6 +119,10 @@ function removeLoader(){
     @font-face {
         font-family: 'dico';
         src: url("dico.ttf");
+    }
+    @font-face {
+        font-family: 'akira';
+        src: url("akira.otf");
     }
     body {
         background: #000;
@@ -157,38 +206,29 @@ function removeLoader(){
         left: 50%;
         transform: translate(-50%,-50%);
     }
-    .anim {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 70%;
-        background-image: url(seq3/intro_0.png);
-    }
     .heading {
         font-family: 'rock';
         text-align: left;
         padding-left: 10%;
-        font-size: 150%;
+        font-size: 4vw;
     }
     .content {
         font-family: 'klik';
         text-align: center;
-        font-size: 100%;
+        font-size: 3vw;
     }
     .wrapper {
         margin: 5%;
         padding: 5%;
-        margin-top: 10%;
+        margin-top: 15vw;
     }
     .logo {
         position:fixed;
-        width: 15%;
-        right:0;
-        left:0;
-        top:1%;
+        width: 14vw;
+        right: 7vw;
+        top:0;
         z-index:2;
-        margin: auto;
+        margin-top: 6vw;
     }
     .floater {
         position: fixed;
@@ -232,11 +272,6 @@ function removeLoader(){
             transform: translate(-2.5%,2.5%);
         }
     }
-    @keyframes slideup {
-        0% {
-            
-        }
-    }
     .header {
         position: fixed;
         top: 0;
@@ -245,6 +280,7 @@ function removeLoader(){
         height: 13vw;
         background: #000;
         z-index: 2;
+        margin-top: 4vw;
     }
     .backdrop {
         top: 0;
@@ -255,53 +291,157 @@ function removeLoader(){
         background: #000;
         position: fixed;
     }
-    .glare {
-        pointer-events: none;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        right: 0;
-        z-index: 3;
-        mix-blend-mode: color-dodge;
-        opacity: 80%;
-        background: linear-gradient(222deg, #666666, #2d2d2d, #666666, #b1b1b1, #666666, #c2c2c2, #666666, #3c3c3c, #666666, #515151, #424242);
-        background-size: 2200% 2200%;
-
-        -webkit-animation: AnimationName 9s ease infinite;
-        -moz-animation: AnimationName 9s ease infinite;
-        -o-animation: AnimationName 9s ease infinite;
-        animation: AnimationName 9s ease infinite;
-    }
-
-    @-webkit-keyframes AnimationName {
-        0%{background-position:0% 51%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 51%}
-    }
-    @-moz-keyframes AnimationName {
-        0%{background-position:0% 51%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 51%}
-    }
-    @-o-keyframes AnimationName {
-        0%{background-position:0% 51%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 51%}
-    }
-    @keyframes AnimationName {
-        0%{background-position:0% 51%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 51%}
-    }
     .mouse {
         width: 50px;
         height: 50px;
         position: fixed;
         background: red;
     }
-</style>
+     .divider {
+        width: 100%;
+        height: 2px;
+        background: #fff;
+    }
+    .b1 {
+        margin-top: 20px;
+        width: 100%;
+        height: 40vw;
+        border: 2px solid #fff;
+    }
+    .menutop {
+        position: fixed;
+        width: 100%;
+        background: #fff;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        color: #000;
+        padding: 1vw;
+        font-size: 2vw;
+        font-family: bro;
+        padding-left: 2vw;
+    }
+    .menuhover {
+        position: fixed;
+        width: 0%;
+        background: #fff;
+        top: 0;
+        left: -5%;
+        z-index: 11;
+        color: transparent;
+        padding: 1vw;
+        font-size: 2vw;
+        mix-blend-mode: difference;
+        transition: .2s;
+    }
+    .hoverer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5vw;
+        z-index: 12;
+    }
+    .hoverer:hover .menuhover {
+        width: 100%;
+        left: 0;
+    }
+    .pad {
+        padding: 2vw;
+        font-family: bro;
+    }
+    .savestate {
+        top: 17vw;
+        width: 90%;
+        border: 2px solid #fff;
+        
+    }
+    .box {
+        position: fixed;
+        top: 17vw;
+        left: 0;
+        width: 85%;
+        height: 100%;
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
+    }
+    .cornery {
+        position: fixed;
+        top: 4vw;
+        right: 0;
+        width: 15vw;
+        height: 13vw;
+        border-bottom: 2px solid #fff;
+    }
+    .column-left{ float: left; width: 33.333%; }
+    .column-right{ float: right; width: 33.333%; }
+    .column-center{ display: inline-block; width: 33.333%; }
+    
+    .loadlogo {
+        position: fixed;
+        background-size: 100%;
+        width: 8vw;
+        height: 8vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-image: url(logo.png);
+        transition: 1s ease;
+        opacity: 0%;
+        filter: blur(1vw);
+        margin-top: 8vw;
+        z-index: 3;
+    }
+    .loadswish {
+        position: absolute;
+        background-size: 100%;
+        width: 8vw;
+        height: 8vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-image: url(swish.png);
+        transition: .5s ease;
+        opacity: 0%;
+        z-index: 1;
+    }
+    .loadreveal {
+        position: absolute;
+        background-size: 100%;
+        width: 8vw;
+        height: 8vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: conic-gradient(#fff, #000,  #000, #fff);
+        mix-blend-mode: multiply;
+        transition: 1s ease;
+        opacity: 100%;
+        z-index: 2;
+    }
+    .loadshadow {
+        position: absolute;
+        width: 30vw;
+        height: 30vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: transparent;
+        box-shadow: inset 0 0 7vw 7vw #000;
+        opacity: 100%;
+        z-index: 4;
+    }
 
+    
+    -webkit-backface-visibility: hidden;
+-webkit-perspective: 1000;
+-webkit-transform: translate3d(0,0,0);
+-webkit-transform: translateZ(0);
+backface-visibility: hidden;
+perspective: 1000;
+transform: translate3d(0,0,0);
+transform: translateZ(0);
+    
 <style> 
     .bg {
   position: fixed;
@@ -363,47 +503,84 @@ function removeLoader(){
 <body>
     
     <div id="loader">
-        <img class="anim" id="anim"/>
+        <div class="loadshadow"></div>
+        <div class="loadreveal"></div>
+        <div class="loadswish"></div>
+        <div class="loadlogo"></div>
     </div>
-
-    <div class="header"></div>
-    <canvas class="logo" id="hero2"></canvas>
-
-
-    <div id="main">
-        
-    <button class="menuon"></button>
-    <button class="menuoff"></button>
     
-    <div class="glare"></div>
-        
+    <div class="hoverer">
+    <div class="menuhover">Menu</div>
+    <div class="menutop">Menu</div>
+    </div>
+    
+    <div class="header"> 
+    </div>
+    
+    
+    <canvas class="logo" id="hero2"></canvas>
+    
+    <div class="box"></div>
+    <div class="cornery"></div>
+    
+    <div id="main" style="margin-left:-2vw;width:90%;">
             
     <canvas class="floater" id="hero"></canvas>
-        
-    <div class="backdrop"></div>
+
     
-    <div class="layout"></div>
-        
     <div class="wrapper">
         
-    <!--
-    <p class="heading">
-        Madindex
-    </p>
+        <div class="b1" style="height: 40vw; border: none;">
+        <div class="pad" style="font-family:akira; font-size: 6vw">Madindex ™</div>
+           
+        <div class="pad" style="font-family:klik; letter-spacing:.06vw; padding: 0;padding-left: 2vw;padding-bottom: 5vw;margin-top: -2vw;">Est 2019/ Designer , &nbsp; Creative Dir.</div>
+            
+        <div class="divider" style="margin-top: 1vw;"></div>
+            
+
+            <!--
+            
+        <div class="pad" style="font-family:klik; letter-spacing:.06vw;padding: 0;">Contents</div>
+            
+        <div class="divider" style="margin-top: 1vw;"></div>
+          
+        <div class="column-left">
+        <div class="pad" style="font-family:klik; letter-spacing:.06vw; padding-bottom: 0;">Selected Work</div>
+        <div class="pad" style="font-family:klik; letter-spacing:.06vw; padding-top: 1vw; padding-bottom: 0;">About</div>
+        </div>
+        <div class="column-center">   
+        <div class="pad" style="font-family:klik; letter-spacing:.06vw; padding-bottom: 0;">Mystery door</div>
+        <div class="pad" style="font-family:klik; letter-spacing:.06vw; padding-top: 1vw; padding-bottom: 0;">Services</div>
+        </div>
+        <div class="column-right">   
+        <div class="pad" style="font-family:klik; letter-spacing:.06vw; padding-bottom: 0;">Contact</div>
+        </div>
+          -->  
         
+        </div>
+
+        <p class="heading">
+        Notice:
+        </p>
+        
+        <p class="content">
+        Website in development/ Launching soon
+        </p>
+
+   <!-- <div class="b1" style="height: 20vw;"></div>
+
+    <p class="heading">
+        Copyright &copy; 2021
+    </p>
+
     <p class="content">
-    </p>
-        
-    <p class="heading">
         Madindex
     </p>
-    -->
-        
-        <div style="height:2000px;"></div>
         
     <p class="content">
         <span></span>&emsp;
     </p>
+    -->
         
     </div>
         
@@ -431,54 +608,6 @@ function removeLoader(){
 </script>
     
 <script>
-    
-const $element = $('.anim');
-const imagePath = '/seq3';
-const totalFrames = 29;
-const animationDuration = 1000;
-const timePerFrame = animationDuration / totalFrames;
-let timeWhenLastUpdate;
-let timeFromLastUpdate;
-let frameNumber = 0;
-
-function step2(startTime) {
-    
-    if (frameNumber == 29) {
-    document.getElementById("anim").style.backgroundImage = "url(seq3/intro_29.png)";
-        return;
-}
-
-  if (!timeWhenLastUpdate) timeWhenLastUpdate = startTime;
-  timeFromLastUpdate = startTime - timeWhenLastUpdate;
-
-  if (timeFromLastUpdate > timePerFrame) {
-
-    $element.attr('src', imagePath + `/intro_${frameNumber}.png`);
-    timeWhenLastUpdate = startTime;
-
-    if (frameNumber >= totalFrames) {
-      frameNumber = 1;
-    } else {
-      frameNumber = frameNumber + 1;
-    }        
-  }
-  
-  requestAnimationFrame(step2);
-}
-
-$(document).ready(() => {
-  for (var i = 1; i < totalFrames + 1; i++) {
-    $('body').append(`<div id="preload-image-${i}" style="background-image: url('${imagePath}/intro_${i}.png');"></div>`);
-  }
-});
-
-$(window).on('load', () => {
-  requestAnimationFrame(step2);
-});
-    
-</script>
-    
-<script>
     $('.menuOn').click(function() {
         document.getElementById("menu").style.animation = "menuin 1s forwards";
         document.getElementById("main").style.display = "none";
@@ -490,49 +619,6 @@ $(window).on('load', () => {
 </script>
     
 <script>
-    const html = document.documentElement;
-const canvas = document.getElementById("hero");
-const context = canvas.getContext("2d");
-
-const frameCount = 116;
-const currentFrame = index => (
-  `seq/m_${index.toString().padStart(1, '0')}.png` //5 jpg
-)
-
-const preloadImages = () => {
-  for (let i = 1; i < frameCount; i++) {
-    const img = new Image();
-    img.src = currentFrame(i);
-  }
-};
-
-const img = new Image()
-img.src = currentFrame(1);
-canvas.width=1080; //540
-canvas.height=1080; //350
-img.onload=function(){
-  context.drawImage(img, 0, 0);
-}
-
-const updateImage = index => {
-  img.src = currentFrame(index);
-  context.drawImage(img, 0, 0);
-}
-
-window.addEventListener('scroll', () => {  
-  const scrollTop = html.scrollTop;
-  const maxScrollTop = html.scrollHeight - window.innerHeight;
-  const scrollFraction = scrollTop / maxScrollTop;
-  const frameIndex = Math.min(
-    frameCount - 1,
-    Math.ceil(scrollFraction * frameCount)
-  );
-  
-  requestAnimationFrame(() => updateImage(frameIndex + 1))
-});
-
-preloadImages();
-
 const html2 = document.documentElement;
 const canvas2 = document.getElementById("hero2");
 const context2 = canvas2.getContext("2d");
@@ -564,7 +650,7 @@ const updateImage2 = index => {
 
 window.addEventListener('scroll', () => {  
   const scrollTop = html2.scrollTop;
-  const maxScrollTop = html.scrollHeight - window.innerHeight;
+  const maxScrollTop = html2.scrollHeight - window.innerHeight;
   const scrollFraction = scrollTop / maxScrollTop;
   const frameIndex = Math.min(
     frameCount2 - 1,
