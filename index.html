@@ -13,7 +13,7 @@
     
 <script>
 var imgs = [];
-var imgUrls = ["instagram.png", "m_0.png", "m_00000.jpg"];
+var imgUrls = ["logo.png", "swish.png"];
 for (i=0;i<imgUrls.length;i++) {
     imgs.push(new Image());
     imgs[i].src = imgUrls[i]
@@ -46,17 +46,17 @@ $(window).on('load', function(){
     $('.loadlogo').css({
         transition: '1s ease',
         opacity: '0%',
-        marginTop: '-10vw'
+        marginTop: '-25vw'
         });
     $('.loadswish').css({
         transition: '1s ease',
         opacity: '0%',
-        marginTop: '-10vw'
+        marginTop: '-25vw'
         });
     $('.loadreveal').css({
         transition: '1s ease',
         opacity: '0%',
-        marginTop: '-10vw'
+        marginTop: '-25vw'
         });
     },1400);
     
@@ -66,11 +66,6 @@ function removeLoader(){
     $( "#loader" ).fadeOut(1500, function() {
       $('html, body').css({overflow: 'hidden'});
       $('html, body').css({overflow: 'visible'});
-        
-      $( "#loader" ).remove();
-      setTimeout(function() {
-          document.getElementById("hero").style.animation = "float 25s linear infinite";
-      },1000);
   });  
 }
 </script>
@@ -89,12 +84,8 @@ function removeLoader(){
         src: url("klik.otf");
     }
     @font-face {
-        font-family: 'espera';
-        src: url("espera.ttf");
-    }
-    @font-face {
-        font-family: 'rock';
-        src: url("rockford.otf");
+        font-family: 'nt';
+        src: url("nt.otf");
     }
     @font-face {
         font-family: 'newyork';
@@ -103,18 +94,6 @@ function removeLoader(){
     @font-face {
         font-family: 'code';
         src: url("code.ttf");
-    }
-    @font-face {
-        font-family: 'pixel';
-        src: url("PixelCards.ttf");
-    }
-    @font-face {
-        font-family: '3d';
-        src: url("3D.ttf");
-    }
-    @font-face {
-        font-family: 'icons';
-        src: url("icon.ttf");
     }
     @font-face {
         font-family: 'dico';
@@ -138,176 +117,6 @@ function removeLoader(){
         background: #000;
         z-index: 20;
     }
-    .menubuttons {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        right: 0;
-        height: 7em;
-        display: block;
-        background: transparent;
-        opacity: 0%;
-        border: none;
-        outline: none;
-        z-index: 2;
-    }
-    .menu {
-        opacity: 0%;
-        pointer-events: none;
-        margin-top: 15%;
-    }
-    @keyframes menuin {
-        0% {
-            pointer-events: none;
-            opacity: 0%;
-            filter: blur(10px);
-        }
-        100% {
-            pointer-events: all;
-            opacity: 100%;
-            filter: blur(0);
-        }
-    }
-    @keyframes menuout {
-        100% {
-            pointer-events: none;
-            opacity: 0%;
-            filter: blur(10px);
-        }
-        0% {
-            pointer-events: all;
-            opacity: 100%;
-            filter: blur(0);
-        }
-    }
-    .menuon {
-        width: 30%;
-        height: 15%;
-        border: none;
-        background: red;
-        opacity: 0%;
-        margin-top: 500px;
-        position: fixed;
-        z-index: 90;
-        top: -50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-    .menuoff {
-        width: 30%;
-        height: 15%;
-        border: none;
-        background: red;
-        opacity: 0%;
-        margin-top: 500px;
-        position: fixed;
-        z-index: 90;
-        top: -50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-    .heading {
-        font-family: 'rock';
-        text-align: left;
-        padding-left: 10%;
-        font-size: 4vw;
-    }
-    .content {
-        font-family: 'klik';
-        text-align: center;
-        font-size: 3vw;
-    }
-    .wrapper {
-        margin: 5%;
-        padding: 5%;
-        margin-top: 15vw;
-    }
-    .logo {
-        position:fixed;
-        width: 14vw;
-        right: 7vw;
-        top:0;
-        z-index:2;
-        margin-top: 6vw;
-    }
-    .floater {
-        position: fixed;
-        /*transform: scaleY(-1);
-        animation: float 25s linear infinite;*/
-        animation: none;
-        width: 150%;
-        margin: auto;
-        top: 0;
-        z-index: -1;
-        left: -25%;
-        right: 0;
-        transform: translate(-2.5%,2.5%);
-    }
-    @keyframes float {
-        0% {
-            transform: translate(-2.5%,2.5%);
-        }
-        12.5% {
-            transform: translate(-5%,0%);
-        }
-        25% {
-            transform: translate(-2.5%,-2.5%) rotate(-3deg);
-        }
-        37.5% {
-            transform: translate(0%,-5%);
-        }
-        50% {
-            transform: translate(2.5%,-2.5%) rotate(3deg);
-        }
-        62.5% {
-            transform: translate(5%,0%);
-        }
-        75% {
-            transform: translate(2.5%,2.5%);
-        }
-        87.5% {
-            transform: translate(0%,5%);
-        }
-        100% {
-            transform: translate(-2.5%,2.5%);
-        }
-    }
-    .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 13vw;
-        background: #000;
-        z-index: 2;
-        margin-top: 4vw;
-    }
-    .backdrop {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: -2;
-        background: #000;
-        position: fixed;
-    }
-    .mouse {
-        width: 50px;
-        height: 50px;
-        position: fixed;
-        background: red;
-    }
-     .divider {
-        width: 100%;
-        height: 2px;
-        background: #fff;
-    }
-    .b1 {
-        margin-top: 20px;
-        width: 100%;
-        height: 40vw;
-        border: 2px solid #fff;
-    }
     .menutop {
         position: fixed;
         width: 100%;
@@ -316,10 +125,10 @@ function removeLoader(){
         left: 0;
         z-index: 10;
         color: #000;
-        padding: 1vw;
-        font-size: 2vw;
+        padding: 1%;
+        font-size: 100%;
         font-family: bro;
-        padding-left: 2vw;
+        padding-left: 2%;
     }
     .menuhover {
         position: fixed;
@@ -329,8 +138,8 @@ function removeLoader(){
         left: -5%;
         z-index: 11;
         color: transparent;
-        padding: 1vw;
-        font-size: 2vw;
+        padding: 1%;
+        font-size: 100%;
         mix-blend-mode: difference;
         transition: .2s;
     }
@@ -339,44 +148,13 @@ function removeLoader(){
         top: 0;
         left: 0;
         width: 100%;
-        height: 5vw;
+        height: 5%;
         z-index: 12;
     }
     .hoverer:hover .menuhover {
         width: 100%;
         left: 0;
     }
-    .pad {
-        padding: 2vw;
-        font-family: bro;
-    }
-    .savestate {
-        top: 17vw;
-        width: 90%;
-        border: 2px solid #fff;
-        
-    }
-    .box {
-        position: fixed;
-        top: 17vw;
-        left: 0;
-        width: 85%;
-        height: 100%;
-        border-top: 2px solid #fff;
-        border-right: 2px solid #fff;
-    }
-    .cornery {
-        position: fixed;
-        top: 4vw;
-        right: 0;
-        width: 15vw;
-        height: 13vw;
-        border-bottom: 2px solid #fff;
-    }
-    .column-left{ float: left; width: 33.333%; }
-    .column-right{ float: right; width: 33.333%; }
-    .column-center{ display: inline-block; width: 33.333%; }
-    
     .loadlogo {
         position: fixed;
         background-size: 100%;
@@ -422,7 +200,7 @@ function removeLoader(){
     .loadshadow {
         position: absolute;
         width: 30vw;
-        height: 30vw;
+        height: 45vw;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
@@ -430,10 +208,82 @@ function removeLoader(){
         box-shadow: inset 0 0 7vw 7vw #000;
         opacity: 100%;
         z-index: 4;
+        border: 5vw solid #000;
     }
-
+    :root {
+        --c: 100%;
+    }
+    @media only screen and (max-width: 900px) {
+        :root {
+            --c: 80%;
+        }
+    }
+    @media only screen and (max-width: 700px) {
+        :root {
+            --c: 70%;
+        }
+    }
     
-    -webkit-backface-visibility: hidden;
+    @media only screen and (min-width: 1000px) {
+        .picture {
+            filter: brightness(.8) blur(5px);
+        }
+    }
+    
+    .c1 {
+        font-family: akira;
+        font-size: calc(var(--c)*5);
+        transition: .5s ease;
+    }
+    .c2 {
+        font-family: akira;
+        font-size: calc(var(--c)*1.5);
+        transition: .5s ease;
+    }
+    .c3 {
+        font-family: nt;
+        font-size: calc(var(--c)*3);
+        transition: .5s ease;
+    }
+    .c4 {
+        font-family: brobold;
+        font-size: calc(var(--c)*.9);
+        transition: .5s ease;
+        padding-top: 2%;
+    }
+    .divider {
+        height: 7vh;
+        width: 100%;
+        pointer-events: none;
+    }
+    p {
+        margin: 0;
+    }
+    .heading {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgb(0,0,0,1);
+        padding: 2%;
+    }
+    .picture {
+        position: fixed;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: .1s ease;
+    }
+    a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+    }
+-webkit-backface-visibility: hidden;
 -webkit-perspective: 1000;
 -webkit-transform: translate3d(0,0,0);
 -webkit-transform: translateZ(0);
@@ -441,67 +291,9 @@ backface-visibility: hidden;
 perspective: 1000;
 transform: translate3d(0,0,0);
 transform: translateZ(0);
-    
-<style> 
-    .bg {
-  position: fixed;
-  z-index: 999999;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200vh;
-  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
-  background-repeat: repeat;
-  animation: bg-animation .2s infinite;
-  opacity: 100%;
-  visibility: visible;
-  pointer-events: none;
-}
-@keyframes bg-animation {
-    0% { transform: translate(0,0) }
-    10% { transform: translate(-5%,-5%) }
-    20% { transform: translate(-10%,5%) }
-    30% { transform: translate(5%,-10%) }
-    40% { transform: translate(-5%,15%) }
-    50% { transform: translate(-10%,5%) }
-    60% { transform: translate(15%,0) }
-    70% { transform: translate(0,10%) }
-    80% { transform: translate(-15%,0) }
-    90% { transform: translate(10%,5%) }
-    100% { transform: translate(5%,0) }
-}
 </style>
-    
-<style>
-    @media only screen and (min-width: 600px) {
-        .floater {
-            width: 130%;
-            left: -15%;
-        }
-    }
-    @media only screen and (min-width: 800px) {
-        .floater {
-            top: 5%;
-            width: 80%;
-            left: 0%;
-        }
-    }
-    @media only screen and (min-width: 1200px) {
-        .floater {
-            top: -5%;
-        }
-    }
-    @media only screen and (min-width: 1500px) {
-        .floater {
-            top: -18%;
-        }
-    }
-</style> <!--media queries-->
 
 <body>
-    
     <div id="loader">
         <div class="loadshadow"></div>
         <div class="loadreveal"></div>
@@ -513,90 +305,38 @@ transform: translateZ(0);
     <div class="menuhover">Menu</div>
     <div class="menutop">Menu</div>
     </div>
-    
-    <div class="header"> 
-    </div>
-    
-    
-    <canvas class="logo" id="hero2"></canvas>
-    
-    <div class="box"></div>
-    <div class="cornery"></div>
-    
-    <div id="main" style="margin-left:-2vw;width:90%;">
-            
-    <canvas class="floater" id="hero"></canvas>
 
-    
-    <div class="wrapper">
-        
-        <div class="b1" style="height: 40vw; border: none;">
-        <div class="pad" style="font-family:akira; font-size: 6vw">Madindex ™</div>
+    <div class="heading">
+    <div class="c1">Madindex™</div>
            
-        <div class="pad" style="font-family:klik; letter-spacing:.06vw; padding: 0;padding-left: 2vw;padding-bottom: 5vw;margin-top: -2vw;">Est 2019/ Designer , &nbsp; Creative Dir.</div>
-            
-        <div class="divider" style="margin-top: 1vw;"></div>
-            
-
-            <!--
-            
-        <div class="pad" style="font-family:klik; letter-spacing:.06vw;padding: 0;">Contents</div>
-            
-        <div class="divider" style="margin-top: 1vw;"></div>
-          
-        <div class="column-left">
-        <div class="pad" style="font-family:klik; letter-spacing:.06vw; padding-bottom: 0;">Selected Work</div>
-        <div class="pad" style="font-family:klik; letter-spacing:.06vw; padding-top: 1vw; padding-bottom: 0;">About</div>
-        </div>
-        <div class="column-center">   
-        <div class="pad" style="font-family:klik; letter-spacing:.06vw; padding-bottom: 0;">Mystery door</div>
-        <div class="pad" style="font-family:klik; letter-spacing:.06vw; padding-top: 1vw; padding-bottom: 0;">Services</div>
-        </div>
-        <div class="column-right">   
-        <div class="pad" style="font-family:klik; letter-spacing:.06vw; padding-bottom: 0;">Contact</div>
-        </div>
-          -->  
-        
-        </div>
-
-        <p class="heading">
-        Notice:
-        </p>
-        
-        <p class="content">
-        Website in development/ Launching soon
-        </p>
-
-   <!-- <div class="b1" style="height: 20vw;"></div>
-
-    <p class="heading">
-        Copyright &copy; 2021
-    </p>
-
-    <p class="content">
-        Madindex
-    </p>
-        
-    <p class="content">
-        <span></span>&emsp;
-    </p>
-    -->
+    <div class="c2">Est. 2019/&copy;2021 Designer, Creative Dir.</div>
+    
+    <div class="c4">± Copyright 2021 All Rights Reserved — Website currently under development</div>
         
     </div>
-        
-    </div> <!--main-->
     
-    <div class="layout"></div>
+    <a id="bg" target="_blank" class="picture"></a>
     
-    <div class="menuwrap"></div>
+    <div class="divider"></div>
     
-<div class="bg">  
-</div>
+    <a href="https://instagram.com/madindex/" target="_blank" class="c3"><p>Selected</p><p>Work</p></a>
+    
+    <div class="divider"></div>
+    
+    <a href="mailto:order@madindex.ml" target="_blank"  class="c3" style="text-align:right;"><p>Direct</p><p>order</p></a>
+    
+    <div class="divider"></div>
+    
+    <a href="https://instagram.com/madindex/" target="_blank" class="c3"><p>Retro</p><p>Grade</p></a>
+    
+    <div class="divider"></div>
+    
+    <a href="https://instagram.com/madindex/" target="_blank" class="c3" style="text-align:right;"><p>Show</p><p>Reel</p></a>
     
 </body> 
     
 <script>
-    var skew = document.getElementById('hero');
+    var skew = document.getElementById('bg');
 
     window.onmousemove = function (e) {
         var x = e.clientX,
@@ -605,66 +345,27 @@ transform: translateZ(0);
         skew.style.top = (y + 2)*-.02 + 'px';
         skew.style.left = (x + 2)*-.02 + 'px';
     };
-</script>
     
-<script>
-    $('.menuOn').click(function() {
-        document.getElementById("menu").style.animation = "menuin 1s forwards";
-        document.getElementById("main").style.display = "none";
+    const backgrounds = ["bg1.png", "bg2.png"];
+
+    const rng = Math.floor(Math.random() * backgrounds.length);
+    
+    $(window).on('load', function(){
+        document.getElementById("bg").style.backgroundImage = "url(" + backgrounds[rng] + ")";
+        if (backgrounds[rng] == "bg1.png") {
+            document.getElementById("bg").href = "https://unsplash.com/photos/6egdNN_3k3I";
+        } else
+        if (backgrounds[rng] == "bg2.png") {
+            document.getElementById("bg").href = "https://unsplash.com/photos/HMCNkAK45r0";
+        }
     });
-    $('.menuOff').click(function() {
-        document.getElementById("menu").style.animation = "menuout 1s forwards";
-        document.getElementById("main").style.display = "block";
-    });
-</script>
     
+    //console.log(backgrounds[rng]);
+    
+</script>
 <script>
-const html2 = document.documentElement;
-const canvas2 = document.getElementById("hero2");
-const context2 = canvas2.getContext("2d");
-
-const frameCount2 = 61;
-const currentFrame2 = index => (
-  `seq2/m_${index.toString().padStart(5, '0')}.jpg`
-)
-
-const preloadImages2 = () => {
-  for (let i = 1; i < frameCount2; i++) {
-    const img = new Image();
-    img.src = currentFrame2(i);
-  }
-};
-
-const img2 = new Image()
-img2.src = currentFrame2(1);
-canvas2.width=540;
-canvas2.height=350;
-img2.onload=function(){
-  context2.drawImage(img2, 0, 0);
-}
-
-const updateImage2 = index => {
-  img2.src = currentFrame2(index);
-  context2.drawImage(img2, 0, 0);
-}
-
-window.addEventListener('scroll', () => {  
-  const scrollTop = html2.scrollTop;
-  const maxScrollTop = html2.scrollHeight - window.innerHeight;
-  const scrollFraction = scrollTop / maxScrollTop;
-  const frameIndex = Math.min(
-    frameCount2 - 1,
-    Math.ceil(scrollFraction * frameCount2)
-  );
-  
-  requestAnimationFrame(() => updateImage2(frameIndex + 1))
-});
-
-preloadImages2();
+    console.log(
+        "Copyright 2021 Designed by Madindex © All Rights Reserved // contact@madindex.ml"
+    );
 </script>
-    
-<script>
-    console.log("Copyright 2021 Designed by Madindex © All Rights Reserved");
-</script>
-    
 </html>
