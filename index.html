@@ -245,9 +245,16 @@ function removeLoader(){
         }
     }
     
+    @media only screen and (max-height: 300px) {
+        :root {
+            --c: 20%;
+        }
+    }
+    
     @media only screen and (min-width: 1000px) {
         .picture {
             filter: brightness(.8) blur(5px);
+            margin-top: -10%;
         }
     }
     
@@ -262,8 +269,9 @@ function removeLoader(){
         transition: .5s ease;
     }
     .c3 {
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
         position: fixed;
-        width: 30%;
         font-family: nt;
         font-size: calc(var(--c)*3.5);
         transition: .5s ease;
@@ -332,6 +340,38 @@ function removeLoader(){
         text-align: center;
         padding-top: 1vh;
         padding-bottom: 1vh;
+        margin-bottom: -5vh;
+        animation: seq 1s ease forwards;
+        animation-delay: 5s;
+    }
+    @keyframes seq {
+        from {
+            margin-bottom: -5vh;
+        }
+        to {
+            margin-bottom: 0;
+        }
+    }
+    .cover {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        animation: down 1.5s ease forwards;
+        z-index: 1;
+        animation-delay: 2s;
+    }
+    @keyframes down {
+        from {
+            margin-top: 0%;
+        }
+        to {
+            margin-top: 200%;
+        }
     }
 -webkit-backface-visibility: hidden;
 -webkit-perspective: 1000;
@@ -351,6 +391,8 @@ transform: translateZ(0);
         <div class="loadlogo"></div>
     </div>
     
+    <div class="cover"></div>
+    
     <a class="hoverer" onClick="window.location.reload();">
     <div class="menuhover"></div>
     <div class="hlogo"></div>
@@ -362,7 +404,7 @@ transform: translateZ(0);
            
     <div class="c2">Est. 2019/&copy;2021 Designer, Creative Dir.</div>
     
-        <div class="c4" style="white-space: nowrap;"><p style="display: inline-block;">± Copyright 2021 All Rights Reserved / Website in development</p><a id="source" target="_blank" style="display: inline-block;">&nbsp;/  Source</a></div>
+        <div class="c4" style="white-space: nowrap;"><p style="display: inline-block;">± Copyright 2021 All Rights Reserved</p><a href="mailto:c@madindex.ml" target="_blank" style="display: inline-block;">&nbsp;&emsp;  E-mail</a><a href="https://instagram.com/madindex/" target="_blank" style="display: inline-block;">&nbsp;&emsp;  Instagram</a><a id="source" target="_blank" style="display: inline-block;">&nbsp;&emsp;  Source</a></div>
         
         <a class="footing" href="mailto:web@madindex.ml">✉️</a>
         
