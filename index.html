@@ -120,6 +120,7 @@ function removeLoader(){
     .menutop {
         position: fixed;
         width: 100%;
+        height: 6%;
         background: #fff;
         top: 0;
         left: 0;
@@ -133,14 +134,14 @@ function removeLoader(){
     .menuhover {
         position: fixed;
         width: 0%;
-        background: #fff;
+        height: 6%;
+        background: #000;
         top: 0;
         left: -5%;
         z-index: 11;
         color: transparent;
         padding: 1%;
         font-size: 100%;
-        mix-blend-mode: difference;
         transition: .2s;
     }
     .hoverer {
@@ -148,12 +149,18 @@ function removeLoader(){
         top: 0;
         left: 0;
         width: 100%;
-        height: 5%;
+        height: 6%;
         z-index: 12;
     }
     .hoverer:hover .menuhover {
         width: 100%;
         left: 0;
+    }
+    .hoverer:hover .menutop {
+        height: 6.2%;
+    }
+    .hoverer:hover .hlogo {
+        filter: invert();
     }
     .loadlogo {
         position: fixed;
@@ -258,7 +265,7 @@ function removeLoader(){
         position: fixed;
         width: 30%;
         font-family: nt;
-        font-size: calc(var(--c)*3);
+        font-size: calc(var(--c)*3.5);
         transition: .5s ease;
     }
     .c4 {
@@ -282,6 +289,7 @@ function removeLoader(){
         bottom: 0;
         background: rgb(0,0,0,1);
         padding: 2%;
+        margin-bottom: 6vh;
     }
     .picture {
         position: fixed;
@@ -298,6 +306,30 @@ function removeLoader(){
         display: block;
         text-decoration: none;
         color: #fff;
+    }
+    .hlogo {
+        position: fixed;
+        width: 10vh;
+        height: 10vh;
+        top: 1%;
+        left: 2%;
+        z-index: 9999;
+        background: url(milogo.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        transition: .2s ease;
+    }
+    .footing {
+        width: 100%;
+        height: 3vh;
+        background: #fff;
+        color: #000;
+        margin: 0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
     }
 -webkit-backface-visibility: hidden;
 -webkit-perspective: 1000;
@@ -317,17 +349,20 @@ transform: translateZ(0);
         <div class="loadlogo"></div>
     </div>
     
-    <div class="hoverer">
-    <div class="menuhover">Menu</div>
-    <div class="menutop">Menu</div>
-    </div>
+    <a class="hoverer" onClick="window.location.reload();">
+    <div class="menuhover"></div>
+    <div class="hlogo"></div>
+    <div class="menutop"></div>
+    </a>
 
     <div class="heading">
     <div class="c1">Madindex™</div>
            
     <div class="c2">Est. 2019/&copy;2021 Designer, Creative Dir.</div>
     
-    <div class="c4">± Copyright 2021 All Rights Reserved — Website currently under development</div>
+        <div class="c4" style="white-space: nowrap;"><p style="display: inline-block;">± Copyright 2021 All Rights Reserved / Website currently under development</p><a id="source" target="_blank" style="display: inline-block;">&nbsp;/ View Source</a></div>
+        
+        <a class="footing" href="mailto:web@madindex.ml">✉️</a>
         
     </div>
     
@@ -369,10 +404,10 @@ transform: translateZ(0);
     $(window).on('load', function(){
         document.getElementById("bg").style.backgroundImage = "url(" + backgrounds[rng] + ")";
         if (backgrounds[rng] == "bg1.png") {
-            document.getElementById("bg").href = "https://unsplash.com/photos/6egdNN_3k3I";
+            document.getElementById("source").href = "https://unsplash.com/photos/6egdNN_3k3I";
         } else
         if (backgrounds[rng] == "bg2.png") {
-            document.getElementById("bg").href = "https://unsplash.com/photos/HMCNkAK45r0";
+            document.getElementById("source").href = "https://unsplash.com/photos/HMCNkAK45r0";
         }
     });
     
