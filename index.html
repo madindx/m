@@ -94,10 +94,6 @@ function removeLoader(){
         src: url("NewYork.otf");
     }
     @font-face {
-        font-family: 'code';
-        src: url("code.ttf");
-    }
-    @font-face {
         font-family: 'dico';
         src: url("dico.ttf");
     }
@@ -162,6 +158,16 @@ function removeLoader(){
         height: 6.2%;
     }
     .hoverer:hover .hlogo {
+        filter: invert();
+    }
+    .hoverer:active .menuhover {
+        width: 100%;
+        left: 0;
+    }
+    .hoverer:active .menutop {
+        height: 6.2%;
+    }
+    .hoverer:active .hlogo {
         filter: invert();
     }
     .loadlogo {
