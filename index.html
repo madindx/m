@@ -139,7 +139,7 @@ function removeLoader(){
         color: transparent;
         padding: 1%;
         font-size: 100%;
-        transition: 0s;
+        transition: .2s;
     }
     .hoverer {
         position: fixed;
@@ -149,14 +149,14 @@ function removeLoader(){
         height: 6%;
         z-index: 12;
     }
-    .hoverer:hover .menuhover {
+    .hoverer:hover .menuhover, .hoverer:active .menuhover {
         width: 100%;
         left: 0;
     }
-    .hoverer:hover .menutop {
+    .hoverer:hover .menutop, .hoverer:active .menutop {
         height: 6.2%;
     }
-    .hoverer:hover .hlogo {
+    .hoverer:hover .hlogo, .hoverer:active .hlogo {
         filter: invert();
     }
     .loadlogo {
