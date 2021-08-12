@@ -7,26 +7,42 @@
     <meta http-equiv="X-UA-Compatible" content= "ie=edge">
     <title>Madindex</title>
 </head>
+
 <link rel="icon" href="https://mad.js.org/favicon.ico?v=4"/>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
+    
+<script>
+var imgs = [];
+var imgUrls = ["logo.png", "swish.png", "bg1.png", "bg2.png"];
+for (i=0;i<imgUrls.length;i++) {
+    imgs.push(new Image());
+    imgs[i].src = imgUrls[i]
+}
+</script> <!--preload images-->
+
 <script>
 $('body').append('<div id="loader"></div>');
 $(window).on('load', function(){
+    
     $('.loadlogo').css({
         opacity: '100%',
         filter: 'blur(0)',
         marginTop: '0'
         });
+    
+    
     setTimeout(function() {
     $('.loadreveal').css({
         transform: 'translate(-50%,-50%) rotate(-180deg)',
         opacity: '50%'
         });
+        
     $('.loadswish').css({
         opacity: '100%'
         });
     },600);
+    
     setTimeout(function() {     
     $('.loadlogo').css({
         transition: '1s ease',
@@ -44,6 +60,7 @@ $(window).on('load', function(){
         marginTop: '-25vw'
         });
     },1400);
+    
   setTimeout(removeLoader, 1500);
 });
 function removeLoader(){
@@ -53,6 +70,7 @@ function removeLoader(){
   });  
 }
 </script>
+
 <style>
     @font-face {
         font-family: 'brobold';
@@ -75,6 +93,10 @@ function removeLoader(){
         src: url("NewYork.otf");
     }
     @font-face {
+        font-family: 'dico';
+        src: url("dico.ttf");
+    }
+    @font-face {
         font-family: 'akira';
         src: url("akira.otf");
     }
@@ -82,7 +104,6 @@ function removeLoader(){
         background: #000;
         color: #fff;
         margin: 20px;
-        font-family: nt;
     }
     #loader {
         position: fixed;
@@ -92,6 +113,56 @@ function removeLoader(){
         right: 0;
         background: #000;
         z-index: 20;
+    }
+    .menutop {
+        position: fixed;
+        width: 100%;
+        height: 6%;
+        background: #fff;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        color: #000;
+        padding: 1%;
+        font-size: calc(var(--c)*1.2);
+        font-family: nt;
+        padding-left: 2%;
+    }
+    .menuhover {
+        position: fixed;
+        width: 0%;
+        height: 6%;
+        background: #000;
+        top: 0;
+        left: -5%;
+        z-index: 11;
+        color: transparent;
+        padding: 1%;
+        font-size: 100%;
+        transition: .2s;
+    }
+    .hoverer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6%;
+        z-index: 12;
+    }
+    .hoverer:hover .menuhover {
+        width: 100%;
+        left: 0;
+    }
+    .hoverer:active .menuhover {
+        width: 100%;
+        left: 0;
+        transition: 0s;
+    }
+    .hoverer:hover .menutop, .hoverer:active .menutop {
+        height: 6.2%;
+    }
+    .hoverer:hover .hlogo, .hoverer:active .hlogo {
+        filter: invert();
     }
     .loadlogo {
         position: fixed;
@@ -150,6 +221,131 @@ function removeLoader(){
         z-index: 4;
         border: 5vw solid #000;
     }
+    :root {
+        --c: 100%;
+    }
+    @media only screen and (max-width: 900px) {
+        :root {
+            --c: 80%;
+        }
+    }
+    @media only screen and (max-width: 700px) {
+        :root {
+            --c: 65%;
+        }
+    }
+    
+    @media only screen and (max-height: 600px) {
+        :root {
+            --c: 60%;
+        }
+    }
+    
+    @media only screen and (max-height: 400px) {
+        :root {
+            --c: 30%;
+        }
+    }
+    
+    @media only screen and (max-height: 300px) {
+        :root {
+            --c: 20%;
+        }
+    }
+    
+    @media only screen and (min-width: 1000px) {
+        .picture {
+            filter: brightness(.8) blur(5px);
+            margin-top: -10%;
+        }
+    }
+    
+    .c1 {
+        font-family: akira;
+        font-size: calc(var(--c)*4);
+        transition: .5s ease;
+    }
+    .c2 {
+        font-family: akira;
+        font-size: calc(var(--c)*1.5);
+        transition: .5s ease;
+    }
+    .c3 {
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        position: fixed;
+        font-family: nt;
+        font-size: calc(var(--c)*3.5);
+        transition: .5s ease;
+    }
+    .c4 {
+        font-family: brobold;
+        font-size: calc(var(--c)*.9);
+        transition: .5s ease;
+        padding-top: 2%;
+    }
+    .divider {
+        height: 12vh;
+        width: 100%;
+        pointer-events: none;
+    }
+    p {
+        margin: 0;
+    }
+    .heading {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgb(0,0,0,1);
+        padding: 2%;
+        padding-bottom: 7vh;
+    }
+    .picture {
+        position: fixed;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: .1s ease;
+    }
+    a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+    }
+    .hlogo {
+        position: fixed;
+        width: 9vh;
+        height: 9vh;
+        top: 1%;
+        left: 2%;
+        z-index: 9999;
+        background: url(milogo.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        transition: .2s ease;
+    }
+    .footing {
+        width: 100%;
+        height: 3vh;
+        background: #fff;
+        color: #000;
+        margin: 0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        margin-bottom: -5vh;
+        animation: seq 1s ease forwards;
+        animation-delay: 5s;
+    }
     @keyframes seq {
         from {
             margin-bottom: -5vh;
@@ -179,119 +375,16 @@ function removeLoader(){
             margin-top: 200%;
         }
     }
-    .rating {
-        unicode-bidi: bidi-override;
-        direction: rtl;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        padding: 2vh;
-        font-size: 1.2em;
-    }
-    .rating > span {
-        display: inline-block;
-        position: relative;
-        width: 1.1em;
-    }
-    .rating > span:hover,
-    .rating > span:hover ~ span {
-        color: transparent;
-    }
-    .rating > span:hover:before,
-    .rating > span:hover ~ span:before {
-        content: "\2605";
-        position: absolute;
-        left: 0; 
-        color: #fff;
-    }
-    .thanks {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        padding: 3vh;
-        animation: pulse .3s steps(2) infinite;
-        display: none;
-        font-size: 1.2em;
-        font-family: akira;
-    }
-    @keyframes pulse {
-        0% {
-            opacity: 0;
-        }
-        50% {
-            opacity:100%;
-        }
-    }
-    .footnote {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        padding: 2vh;
-        font-size: .9em;
-        font-family: helvetica;
-    }
-    footer {
-        position: fixed;
-        width: 100%;
-        height: 1px;
-        left: 0;
-        right: 0;
-        bottom: 70px;
-        background: #fff;
-    }
-    .logo {
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-image: url(milogo.png);
-        background-size: 100%;
-        width: 90px;
-        height: 45px;
-        margin: 15px;
-        filter: invert();
-    }
-    .box {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: 100px 30px 150px 30px;
-        z-index: -1;
-    }
-    .cell {
-        position: absolute;
-        padding: 20px;
-    }
-    .click {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        opacity: 20%;
-        letter-spacing: .1em;
-    }
-    .background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-image: url(bg2.png);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 100%;
-        z-index: -2;
-        opacity: 0;
-        -webkit-mask-image:linear-gradient(to bottom, rgba(255,255,255,1) 80%, rgba(0,0,0,0));
-        mask-image:linear-gradient(to bottom, rgba(255,255,255,1) 80%, rgba(0,0,0,0));
-        transition: 1s ease;
-    }
-    a {
-        text-decoration: none;
-        color: #fff;
-    }
+-webkit-backface-visibility: hidden;
+-webkit-perspective: 1000;
+-webkit-transform: translate3d(0,0,0);
+-webkit-transform: translateZ(0);
+backface-visibility: hidden;
+perspective: 1000;
+transform: translate3d(0,0,0);
+transform: translateZ(0);
 </style>
+
 <body>
     <div id="loader">
         <div class="loadshadow"></div>
@@ -299,101 +392,75 @@ function removeLoader(){
         <div class="loadswish"></div>
         <div class="loadlogo"></div>
     </div>
+    
     <div class="cover"></div>
     
-    <div class="logo"></div>
-    
-    <div class="click" id="center">Click</div>
+    <a class="hoverer" onClick="window.location.reload();">
+    <div class="menuhover"></div>
+    <div class="hlogo"></div>
+    <div class="menutop"></div>
+    </a>
 
-    <div class="background" id="background"></div>
+    <div class="heading">
+    <div class="c1">Madindex™</div>
+           
+    <div class="c2">Est. 2019/&copy;2021 Designer, Creative Dir.</div>
     
-    <div class="box">
-    <a href="https://instagram.com/madindex/" class="cell" style="right:0;">Selected Work</a>
-    <a class="cell"></a>
-    <a href="mailto:contact@madindex.ml" class="cell" style="bottom:0;">Contact</a>
-    <div class="cell" style="bottom:0; right: 0;">About</div>
+        <div class="c4" style="white-space: nowrap;"><p style="display: inline-block;">± &emsp; Copyright 2021 All Rights Reserved</p><a href="mailto:c@madindex.ml" target="_blank" style="display: inline-block;">&nbsp;&emsp;  E-mail</a><a href="https://instagram.com/madindex/" target="_blank" style="display: inline-block;">&nbsp;&emsp;  Instagram</a><a id="source" target="_blank" style="display: inline-block;">&nbsp;&emsp;  Source</a></div>
+        
+        <a class="footing" href="mailto:web@madindex.ml">✉️</a>
+        
     </div>
     
-    <footer></footer>
- 
-    <div class="footnote" style="font-size: 1.8em;font-family: akira;">&copy;
-    </div>
+    <a id="bg" target="_blank" class="picture"></a>
     
-    <div class="footnote" style="opacity:80%;margin-left:50px; margin-bottom:.5em;">
-        &emsp;Copyright Madindex™ 2021
-    </div>
+    <div class="divider"></div>
     
-    <div id="stars" class="rating">
-        <span id="r1">☆</span><span id="r2">☆</span><span id="r3">☆</span><span id="r4">☆</span>
-    </div><div class="thanks" id="thanks">THANKS</div>
+    <a href="https://instagram.com/madindex/" target="_blank" class="c3"><p>Selected</p><p>Work</p></a>
     
-    <form name="feedback" style="opacity:0; position:absolute;">
-        <input style="pointer-events: none;width:0;" id="input"name="ratings">
-        <button style="pointer-events: none;" id="submit" type="submit"></button>
-    </form>
+    <div class="divider"></div>
+    
+    <a href="mailto:order@madindex.ml" target="_blank"  class="c3" style="text-align:right;right: 20px;"><p>Direct</p><p>order</p></a>
+    
+    <div class="divider"></div>
+    
+    <a href="https://instagram.com/madindex/" target="_blank" class="c3"><p>Retro</p><p>Grade</p></a>
+    
+    <div class="divider"></div>
+    
+    <a href="https://instagram.com/madindex/" target="_blank" class="c3" style="text-align:right; right: 20px;"><p>Show</p><p>Reel</p></a>
+    
 </body> 
+    
 <script>
-    
-  $("#center").click(function() {
-      document.getElementById("center").style.display = "none";
-      document.getElementById("background").style.opacity = "100%";
-      document.getElementById("background").click();
-  });
-    
-  $("#background").click(function() {
-      
-  });
-    
-  $("#r1").click(function() {
-      document.getElementById("input").value = "FOUR stars";
-      document.getElementById("submit").click();
-      finish();
-      document.getElementById("r1").innerHTML = "★";
-  });
-  $("#r2").click(function() {
-      document.getElementById("input").value = "three stars";
-      document.getElementById("submit").click();
-      finish();
-      document.getElementById("r2").innerHTML = "★";
-  });
-  $("#r3").click(function() {
-      document.getElementById("input").value = "two stars";
-      document.getElementById("submit").click();
-      finish();
-      document.getElementById("r3").innerHTML = "★";
-  });
-  $("#r4").click(function() {
-      document.getElementById("input").value = "one star";
-      document.getElementById("submit").click();
-      finish();
-      document.getElementById("r4").innerHTML = "★";
-  });
+    var skew = document.getElementById('bg');
 
-    function finish() {
-        document.getElementById("thanks").style.display = "block";
-        document.getElementById("thanks").style.transition = "1s ease";
-        document.getElementById("stars").style.opacity= "0%";
-        document.getElementById("stars").style.pointerEvents = "none";
-        setTimeout(function() {
-        document.getElementById("thanks").style.color = '#000';
-        document.getElementById("stars").style.transition = "1s ease";
-        },2000);
-        setTimeout(function() {
-        document.getElementById("thanks").style.display = "none";
-        document.getElementById("stars").style.opacity= "100%";
-        },3000);
-    }
+    window.onmousemove = function (e) {
+        var x = e.clientX,
+            y = e.clientY;
+        
+        skew.style.top = (y + 2)*-.02 + 'px';
+        skew.style.left = (x + 2)*-.02 + 'px';
+    };
     
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwM-esfeuECfU7e6Udd0E4OpRdCYCFxmBDXQHAMk2PKS-Gwdcb5xr2QIKgCpEThA4KPkw/exec'
-  const form = document.forms['feedback']
+    const backgrounds = ["bg1.png", "bg2.png"];
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  });
-
+    const rng = Math.floor(Math.random() * backgrounds.length);
+    
+    $(window).on('load', function(){
+        document.getElementById("bg").style.backgroundImage = "url(" + backgrounds[rng] + ")";
+        if (backgrounds[rng] == "bg1.png") {
+            document.getElementById("source").href = "https://unsplash.com/photos/6egdNN_3k3I";
+        } else
+        if (backgrounds[rng] == "bg2.png") {
+            document.getElementById("source").href = "https://unsplash.com/photos/HMCNkAK45r0";
+        }
+    });
+    
+    //console.log(backgrounds[rng]);
+    
+</script>
+<script>
     console.log(
         "Copyright 2021 Designed by Madindex © All Rights Reserved // contact@madindex.ml"
     );
