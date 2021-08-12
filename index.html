@@ -245,9 +245,9 @@ function removeLoader(){
         left: 0;
         background-image: url(milogo.png);
         background-size: 100%;
-        width: 100px;
-        height: 50px;
-        margin: 20px;
+        width: 90px;
+        height: 45px;
+        margin: 15px;
         filter: invert();
     }
     .box {
@@ -287,6 +287,10 @@ function removeLoader(){
         mask-image:linear-gradient(to bottom, rgba(255,255,255,1) 80%, rgba(0,0,0,0));
         transition: 1s ease;
     }
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
 </style>
 <body>
     <div id="loader">
@@ -304,9 +308,9 @@ function removeLoader(){
     <div class="background" id="background"></div>
     
     <div class="box">
-    <div class="cell" style="right:0;">Selected Work</div>
-    <div class="cell"></div>
-    <div class="cell" style="bottom:0;">Contact</div>
+    <a href="https://instagram.com/madindex/" class="cell" style="right:0;">Selected Work</div>
+    <div class="cell"></a>
+    <a href="mailto:contact@madindex.ml" class="cell" style="bottom:0;">Contact</a>
     <div class="cell" style="bottom:0; right: 0;">About</div>
     </div>
     
@@ -315,7 +319,7 @@ function removeLoader(){
     <div class="footnote" style="font-size: 1.8em;font-family: akira;">&copy;
     </div>
     
-    <div class="footnote" style="margin-left:50px; margin-bottom:.5em;">
+    <div class="footnote" style="opacity:80%;margin-left:50px; margin-bottom:.5em;">
         &emsp;Copyright Madindex™ 2021
     </div>
     
