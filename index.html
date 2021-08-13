@@ -302,7 +302,7 @@ function removeLoader(){
         
     }
 </style>
-<body>
+<body id="body">
     <div id="loader">
         <div class="loadshadow"></div>
         <div class="loadreveal"></div>
@@ -352,7 +352,7 @@ function removeLoader(){
       document.getElementById("inverse").style.display = "block";
       document.getElementById("mode").style.display = "none";
       
-      document.body.style.backgroundColor = "#fff";
+      document.getElementById("body").style.backgroundColor = "#fff";
       document.getElementById("contact").style.filter = "invert()";
       document.getElementById("about").style.filter = "invert()";
       document.getElementById("work").style.filter = "invert()";
@@ -365,7 +365,7 @@ function removeLoader(){
       document.getElementById("inverse").style.display = "none";
       document.getElementById("mode").style.display = "block";
       
-      document.body.style.backgroundColor = "#000";
+      document.getElementById("body").style.backgroundColor = "#000";
       document.getElementById("contact").style.filter = "none";
       document.getElementById("about").style.filter = "none";
       document.getElementById("work").style.filter = "none";
