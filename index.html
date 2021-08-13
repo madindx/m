@@ -170,7 +170,7 @@ function removeLoader(){
         bottom: 0;
         right: 0;
         padding: 2vh;
-        font-size: .8em;
+        font-size: .9em;
         opacity: 80%;
         transition: .4s;
     }
@@ -269,22 +269,6 @@ function removeLoader(){
     .cell:hover {
         opacity: 100%;
     }
-    .background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-image: url(bg2.png);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 100%;
-        z-index: -2;
-        opacity: 0;
-        -webkit-mask-image:linear-gradient(to bottom, rgba(255,255,255,1) 80%, rgba(0,0,0,0));
-        mask-image:linear-gradient(to bottom, rgba(255,255,255,1) 80%, rgba(0,0,0,0));
-        transition: 1s ease;
-    }
     a {
         text-decoration: none;
         color: #fff;
@@ -308,6 +292,7 @@ function removeLoader(){
         background-size: 100%;
         background-repeat: no-repeat;
         filter: invert();
+        transition: 1s ease;
     }
     .mode:hover {
         opacity: 70%;
@@ -317,6 +302,9 @@ function removeLoader(){
     }
     .hovering:hover {
         opacity: 100%;
+    }
+    #work:hover {
+        
     }
 </style>
 <body>
@@ -328,9 +316,10 @@ function removeLoader(){
     </div>
     <div class="cover"></div>
     
-    <header>
-    <div class="logo"></div>
-    <div class="mode"></div>
+    <header id="heading">
+    <div class="logo" onClick="window.location.reload();"></div>
+    <div id="inverse" class="mode" style="display: none;background-image: url(sun.png);"></div>
+    <div id="mode" class="mode"></div>
     </header>
     
     <div class="center" id="center">
@@ -338,18 +327,15 @@ function removeLoader(){
     <p style="margin: 0;font-size: 1.5em;">Est. 2019/©2021 Designer, Creative Dir.</p>
     </div>
     
+    <div id="box" class="box">
+    <a id="work" href="https://instagram.com/madindex/" class="cell" style="right:0;">Selected Work</a>
 
-    <div class="background" id="background"></div>
-    
-    <div class="box">
-    <a href="https://instagram.com/madindex/" class="cell" style="right:0;">Selected Work</a>
-    <a class="cell"></a>
     <a href="mailto:contact@madindex.ml" class="cell" style="bottom:0;">Contact</a>
-    <div class="cell" style="bottom:0; right: 0;">About</div>
+    <a class="cell" style="bottom:0; right: 0;">About</a>
     </div>
     
-    <footer>
-        <a href="https://instagram.com/madindex/" class="footnote"><img class="hovering" style="width:25px;" src="instagram.png"/></a>
+    <footer id="footing">
+        <a id="insta" href="https://instagram.com/madindex/" class="footnote"><img class="hovering" style="width:25px;" src="instagram.png"/></a>
     <div class="footnote" style="opacity:80%;margin-left:50px; margin-bottom:1em;">
         &emsp;&copy; 2021 Madindex™ All Rights Reserved
     </div>
@@ -360,7 +346,6 @@ function removeLoader(){
     
     </footer>
 
-    
     <form name="feedback" style="opacity:0; position:absolute;">
         <input style="pointer-events: none;width:0;" id="input"name="ratings">
         <button style="pointer-events: none;" id="submit" type="submit"></button>
@@ -368,10 +353,26 @@ function removeLoader(){
 </body> 
 <script>
     
-  $("#center").click(function() {
-      document.getElementById("center").style.display = "none";
-      document.getElementById("background").style.opacity = "100%";
-      document.getElementById("background").click();
+  $("#mode").click(function() {
+      document.getElementById("inverse").style.display = "block";
+      document.getElementById("mode").style.display = "none";
+      
+      document.body.style.background = "#fff";
+      document.getElementById("box").style.filter = "invert()";
+      document.getElementById("center").style.filter = "invert()";
+      document.getElementById("heading").style.filter = "invert()";
+      document.getElementById("footing").style.filter = "invert()";
+  });
+    
+  $("#inverse").click(function() {
+      document.getElementById("inverse").style.display = "none";
+      document.getElementById("mode").style.display = "block";
+      
+      document.body.style.background = "#000";
+      document.getElementById("box").style.filter = "none";
+      document.getElementById("center").style.filter = "none";
+      document.getElementById("heading").style.filter = "none";
+      document.getElementById("footing").style.filter = "none";
   });
     
   $("#r1").click(function() {
