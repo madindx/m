@@ -314,7 +314,7 @@ function removeLoader(){
         <div class="loadswish"></div>
         <div class="loadlogo"></div>
     </div>
-    <div class="cover"></div>
+    <div class="cover" id="cover"></div>
     
     <header id="heading">
     <div class="logo" onClick="window.location.reload();"></div>
@@ -354,6 +354,7 @@ function removeLoader(){
 <script>
     
   $("#mode").click(function() {
+      document.getElementById("cover").style.display = "none";
       document.getElementById("inverse").style.display = "block";
       document.getElementById("mode").style.display = "none";
       
