@@ -330,8 +330,8 @@ function removeLoader(){
     <div id="box" class="box">
     <a id="work" href="https://instagram.com/madindex/" class="cell" style="right:0;">Selected Work</a>
 
-    <a href="mailto:contact@madindex.ml" class="cell" style="bottom:0;">Contact</a>
-    <a class="cell" style="bottom:0; right: 0;">About</a>
+    <a id="contact" href="mailto:contact@madindex.ml" class="cell" style="bottom:0;">Contact</a>
+    <a id="about" class="cell" style="bottom:0; right: 0;">About</a>
     </div>
     
     <footer id="footing">
@@ -358,7 +358,9 @@ function removeLoader(){
       document.getElementById("mode").style.display = "none";
       
       document.body.style.backgroundColor = "#fff";
-      document.getElementById("box").style.filter = "invert()";
+      document.getElementById("contact").style.filter = "invert()";
+      document.getElementById("about").style.filter = "invert()";
+      document.getElementById("work").style.filter = "invert()";
       document.getElementById("center").style.filter = "invert()";
       document.getElementById("heading").style.filter = "invert()";
       document.getElementById("footing").style.filter = "invert()";
@@ -369,7 +371,9 @@ function removeLoader(){
       document.getElementById("mode").style.display = "block";
       
       document.body.style.backgroundColor = "#000";
-      document.getElementById("box").style.filter = "none";
+      document.getElementById("contact").style.filter = "none";
+      document.getElementById("about").style.filter = "none";
+      document.getElementById("work").style.filter = "none";
       document.getElementById("center").style.filter = "none";
       document.getElementById("heading").style.filter = "none";
       document.getElementById("footing").style.filter = "none";
