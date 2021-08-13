@@ -298,9 +298,6 @@ function removeLoader(){
     .hovering:hover {
         opacity: 100%;
     }
-    #work:hover {
-        
-    }
     .backdrop {
         z-index: -3;
         position: fixed;
@@ -309,6 +306,20 @@ function removeLoader(){
         bottom: 0;
         left: 0;
         right: 0;
+    }
+    .media {
+        padding-right: 20px;
+        margin-top: 20px;
+        position: absolute;
+        right: 0;
+        top: 3em;
+        line-height: 3em;
+        overflow: hidden;
+        font-size: .8em;
+    }
+    .shift {
+        margin-top: -15em;
+        transition: .5s ease;
     }
 </style>
 <body id="body">
@@ -332,7 +343,17 @@ function removeLoader(){
     </div>
     
     <div id="box" class="box">
-    <a id="work" href="https://instagram.com/madindex/" class="cell" style="right:0;">Selected Work</a>
+    <a id="work" class="cell" style="right:0;">Selected Work</a>
+        
+    <div class="media" id="media">
+        <div id="shift" class="shift">
+        <a class="hovering" href="https://instagram.com/p/CMXltpvBUW3/">cranes.png</a><br>
+        <a class="hovering" href="https://instagram.com/p/CIWVVxxB6sv/">circuit_board.mp4</a><br>
+        <a class="hovering" href="https://instagram.com/p/CHQw28pBfSP/">soul_search.mp4</a><br>
+        <a class="hovering" href="https://instagram.com/p/CGaz_TIBdGd/">dream_disk.mp4</a><br>
+        <a class="hovering" href="https://instagram.com/madindex/"><img src="arrow.png" style="height:1em;"/> &nbsp; view all</a>
+        </div>
+    </div>
 
     <a id="contact" href="mailto:contact@madindex.ml" class="cell" style="bottom:0;">Contact</a>
     <a id="about" class="cell" style="bottom:0; right: 0;">About</a>
@@ -359,6 +380,24 @@ function removeLoader(){
 </body> 
 <script>
     
+  $("a").attr("target", "_blank");
+    
+  $("#shift").on({
+    mouseleave: function () {
+        document.getElementById("shift").style.marginTop = "-15em";
+    }
+  });
+    
+  $("#work").on({
+    mouseenter: function () {
+        document.getElementById("shift").style.marginTop = "0";
+    }
+  });
+
+  $("#work").click(function() {
+      document.getElementById("shift").style.marginTop = "0";
+  });
+    
   $("#mode").click(function() {
       document.getElementById("inverse").style.display = "block";
       document.getElementById("mode").style.display = "none";
@@ -370,6 +409,7 @@ function removeLoader(){
       document.getElementById("center").style.filter = "invert()";
       document.getElementById("heading").style.filter = "invert()";
       document.getElementById("footing").style.filter = "invert()";
+      document.getElementById("shift").style.filter = "invert()";
   });
     
   $("#inverse").click(function() {
@@ -383,6 +423,7 @@ function removeLoader(){
       document.getElementById("center").style.filter = "none";
       document.getElementById("heading").style.filter = "none";
       document.getElementById("footing").style.filter = "none";
+      document.getElementById("shift").style.filter = "none";
   });
     
   $("#r1").click(function() {
@@ -390,18 +431,24 @@ function removeLoader(){
       document.getElementById("submit").click();
       finish();
       document.getElementById("r1").innerHTML = "★";
+      document.getElementById("r2").innerHTML = "★";
+      document.getElementById("r3").innerHTML = "★";
+      document.getElementById("r4").innerHTML = "★";
   });
   $("#r2").click(function() {
       document.getElementById("input").value = "three stars";
       document.getElementById("submit").click();
       finish();
       document.getElementById("r2").innerHTML = "★";
+      document.getElementById("r3").innerHTML = "★";
+      document.getElementById("r4").innerHTML = "★";
   });
   $("#r3").click(function() {
       document.getElementById("input").value = "two stars";
       document.getElementById("submit").click();
       finish();
       document.getElementById("r3").innerHTML = "★";
+      document.getElementById("r4").innerHTML = "★"
   });
   $("#r4").click(function() {
       document.getElementById("input").value = "one star";
