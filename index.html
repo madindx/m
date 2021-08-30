@@ -62,11 +62,15 @@ function removeLoader(){
         font-family: 'akira';
         src: url("akira.otf");
     }
+    @font-face {
+        font-family: 'vcr';
+        src: url("vcr.ttf");
+    }
     body {
         background: #000;
         color: #fff;
         margin: 20px;
-        font-family: nt;
+        font-family: vcr;
     }
     #loader {
         position: fixed;
@@ -217,7 +221,7 @@ function removeLoader(){
         left: 0;
         padding: 2vh;
         font-size: .6em;
-        font-family: helvetica;
+        font-family: vcr;
     }
     footer {
         position: fixed;
@@ -262,7 +266,7 @@ function removeLoader(){
     .cell {
         position: absolute;
         padding: 20px;
-        background-color: #000;
+        text-shadow: 0 0 4px #000;
     }
     a {
         text-decoration: none;
@@ -344,26 +348,22 @@ function removeLoader(){
     
     
     <div id="box" class="box">
-    <a id="work" class="cell" style="right:0;">Selected Work</a>
+    <a id="work" class="cell" style="right:0;">SELECTED WORK</a>
         
     <div class="media" id="media">
         <div id="shift" class="shift">
-        <a class="hovering" href="https://instagram.com/p/CMXltpvBUW3/">cranes.png</a><br>
-        <a class="hovering" href="https://instagram.com/p/CIWVVxxB6sv/">circuit_board.mp4</a><br>
-        <a class="hovering" href="https://instagram.com/p/CHQw28pBfSP/">soul_search.mp4</a><br>
-        <a class="hovering" href="https://instagram.com/p/CGaz_TIBdGd/">dream_disk.mp4</a><br>
-        <a class="hovering" href="https://instagram.com/madindex/"><img src="arrow.png" style="height:1em;"/> &nbsp; view all</a>
+        <a class="hovering" href="https://instagram.com/madindex/"><img src="arrow.png" style="height:1em;"/> &nbsp; BROWSE</a>
         </div>
     </div>
 
-    <a id="contact" href="mailto:contact@madindex.ml" class="cell" style="bottom:0;">Contact</a>
-    <a id="about" class="cell" style="text-decoration: underline; bottom:0; right: 0;">web@madindex.ml</a>
+    <a id="contact" href="mailto:contact@madindex.ml" class="cell" style="bottom:0;">CONTACT</a>
+    <a id="about" class="cell" style="text-decoration: underline; bottom:0; right: 0;">WEB@MADINDEX.ML</a>
     </div>
     
     <footer id="footing">
         <a id="insta" href="https://instagram.com/madindex/" class="footnote"><img class="hovering" style="width:25px;" src="instagram.png"/></a>
     <div class="footnote" style="opacity:80%;margin-left:50px; margin-bottom:1em;">
-        &emsp;&copy; 2021 Madindex™ All Rights Reserved
+        &emsp;&copy; 2021 MADINDEX™ ALL RIGHTS RESERVED
     </div>
         
     <div id="stars" class="rating">
@@ -403,7 +403,7 @@ function removeLoader(){
       document.getElementById("inverse").style.display = "block";
       document.getElementById("mode").style.display = "none";
       
-      document.getElementById("bg").style.backgroundColor = "#fff";
+      document.getElementById("bg").style.backgroundColor = "#fff7f2";
       document.getElementById("contact").style.filter = "invert()";
       document.getElementById("about").style.filter = "invert()";
       document.getElementById("work").style.filter = "invert()";
